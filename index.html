@@ -1,0 +1,1666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brewed With</title>
+<meta name="description" content="Twelve savoury dishes from twelve countries in which beer is part of the cooking, with sources, alcohol facts and US prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@500;700;800;900&family=Barlow+Condensed:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+<style>/* Brewery ephemera: each recipe opens on a bottle label; reading column with a two-column recipe body. */
+:root{
+  --paper:#F4F3EF; --paper-2:#E8E4D9; --paper-3:#DCD6C6;
+  --ink:#1A1A2C; --ink-2:#4E4D62; --rule:rgba(26,26,44,.17);
+  --seal:#A2251B; --on-seal:#F8F3E8; --ribbon:#A2251B; --on-ribbon:#F8F3E8; --foil:#8C6212; --amber:#B4621B;
+  --cap:#C9A23E; --cap-hi:#EBCD73; --cap-ink:#2B1B0C;
+  --wn:#2F6B4F; --we:#A2251B;
+  --disp:'Rokkitt', Rockwell, 'Rockwell Nova', 'Courier New', serif;
+  --lab:'Barlow Condensed', 'Arial Narrow', 'Helvetica Neue', sans-serif;
+  --text:'Source Serif 4', 'Iowan Old Style', Georgia, serif;
+  --measure:38rem;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#15110E; --paper-2:#211A14; --paper-3:#2E251C;
+    --ink:#F0E7D6; --ink-2:#BCAF99; --rule:rgba(240,231,214,.17);
+    --seal:#E2735F; --on-seal:#1A100B; --ribbon:#8F2A1E; --on-ribbon:#F6EBDD; --foil:#E3B85A; --amber:#E39550;
+    --cap:#D3AC4A; --cap-hi:#F1D687; --cap-ink:#24170A;
+    --wn:#7FC6A0; --we:#E2735F; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+    --paper:#15110E; --paper-2:#211A14; --paper-3:#2E251C;
+    --ink:#F0E7D6; --ink-2:#BCAF99; --rule:rgba(240,231,214,.17);
+    --seal:#E2735F; --on-seal:#1A100B; --ribbon:#8F2A1E; --on-ribbon:#F6EBDD; --foil:#E3B85A; --amber:#E39550;
+    --cap:#D3AC4A; --cap-hi:#F1D687; --cap-ink:#24170A;
+    --wn:#7FC6A0; --we:#E2735F; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--text);font-size:17.5px;line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  -webkit-text-size-adjust:100%}
+a{color:inherit;text-decoration-color:var(--amber);text-underline-offset:.18em}
+a:hover{color:var(--seal)}
+:focus-visible{outline:3px solid var(--seal);outline-offset:2px;border-radius:2px}
+h1,h2,h3,h4{text-wrap:balance;margin:0}
+p{margin:0 0 .9em}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:.5rem .8rem;z-index:5}
+.skip:focus{left:max(16px, env(safe-area-inset-left, 0px));top:8px}
+main,.mast-in,.foot{max-width:72rem;margin-inline:auto}
+sup.cite{font-family:var(--lab);font-weight:600;font-size:.68em;line-height:0;margin-left:.12em}
+sup.cite a{text-decoration:none;color:var(--foil)}
+sup.cite a:hover{color:var(--seal)}
+
+/* masthead */
+.mast{padding-block:3.5rem 2.5rem;border-bottom:1px solid var(--rule)}
+.kicker{font-family:var(--lab);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--seal);font-size:.95rem;margin:0 0 .6rem}
+.mast h1{font-family:var(--disp);font-weight:900;font-size:clamp(3.6rem,14vw,8.5rem);line-height:.84;letter-spacing:-.01em;text-transform:uppercase}
+.mast h1 .h1b{color:var(--amber)}
+.stand{max-width:var(--measure);font-size:1.12rem;color:var(--ink-2);margin:1.4rem 0 1.6rem}
+.strip{display:grid;grid-template-columns:repeat(13,1fr);height:18px;max-width:34rem;border:1px solid var(--ink)}
+.strip-k{display:flex;justify-content:space-between;max-width:34rem;font-family:var(--lab);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);margin:.35rem 0 0}
+
+/* contents */
+.contents{padding-block:2.4rem 1rem}
+.contents h2,.sect>h2{font-family:var(--disp);font-weight:800;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1;margin-bottom:1rem}
+.contents ol{list-style:none;margin:0;padding:0;columns:2 18rem;column-gap:2.5rem}
+.contents li{break-inside:avoid;border-bottom:1px dotted var(--rule)}
+.contents li a{display:flex;gap:.7rem;align-items:baseline;padding:.42rem 0;text-decoration:none}
+.c-n{font-family:var(--lab);font-weight:600;color:var(--seal);font-variant-numeric:tabular-nums;width:1.6rem}
+.c-d{flex:1;min-width:0;font-weight:600}
+.c-c{font-family:var(--lab);letter-spacing:.06em;text-transform:uppercase;font-size:.86rem;color:var(--ink-2);text-align:right}
+.contents-x{font-family:var(--lab);font-size:1rem;letter-spacing:.03em;margin-top:1.2rem;color:var(--ink-2)}
+
+/* sections */
+.sect{padding-block:3rem 1rem;border-top:1px solid var(--rule);margin-top:2.4rem}
+.prose{max-width:var(--measure)}
+.lead{color:var(--ink-2)}
+.essay p:first-child{font-size:1.15rem}
+.note{max-width:var(--measure);font-size:.92rem;color:var(--ink-2);margin-top:1rem}
+.tablewrap{overflow-x:auto;margin:1.4rem 0;-webkit-overflow-scrolling:touch}
+table.data{border-collapse:collapse;width:100%;font-size:.95rem}
+table.data caption{text-align:left;font-family:var(--lab);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.88rem;color:var(--ink-2);padding-bottom:.5rem}
+.data th{font-family:var(--lab);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.86rem;text-align:left;border-bottom:2px solid var(--ink);padding:.45rem .6rem;white-space:nowrap}
+.data td{padding:.5rem .6rem;border-bottom:1px solid var(--rule);vertical-align:top}
+.data .n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.data a{font-weight:600}
+.sm{display:block;font-family:var(--lab);font-size:.84rem;letter-spacing:.04em;color:var(--ink-2)}
+
+/* swatches */
+.sw{display:inline-block;width:2.6rem;height:1rem;vertical-align:-.12em;background:linear-gradient(90deg,var(--c1),var(--c2));border:1px solid var(--ink);border-radius:1px;flex:none;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.sm-sw{width:1.8rem;height:.8rem;margin-right:.45rem}
+
+/* style guide */
+.styles{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,19rem),1fr));gap:1.6rem 2rem;margin-top:1.4rem}
+.style{border-top:2px solid var(--ink);padding-top:.8rem;min-width:0}
+.style .st-h{display:flex;gap:.7rem;align-items:center;margin-bottom:.3rem}
+.style h3{font-family:var(--disp);font-weight:800;font-size:1.32rem;line-height:1.1}
+.st-n{font-family:var(--lab);font-weight:600;letter-spacing:.04em;color:var(--foil);font-size:.95rem;margin-bottom:.45rem}
+.style p{font-size:.95rem}
+.st-ex{color:var(--ink-2)}
+.style.avoid{border-top-color:var(--seal)}
+.style.avoid h3{color:var(--seal)}
+
+/* map */
+.map{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:1rem;margin:1rem 0 1.8rem}
+@media (max-width:820px){.map{grid-template-columns:minmax(0,1fr)}}
+.world,.euro{position:relative;background:var(--paper-2);border:1px solid var(--ink);overflow:hidden}
+.world{aspect-ratio:270/87;max-width:100%}
+.euro{aspect-ratio:30/16;max-width:100%}
+.gl{position:absolute;background:var(--rule)}
+.gv{top:0;bottom:0;width:1px}
+.gh{left:0;right:0;height:1px}
+.cont{position:absolute;transform:translate(-50%,-50%);font-family:var(--lab);font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-2);opacity:.55;white-space:nowrap;pointer-events:none}
+.euro .pin .dot{width:1.2rem;height:1.2rem;font-size:.7rem}
+.gh.eq{background:var(--amber);opacity:.6}
+.ebox{position:absolute;border:1.5px dashed var(--seal)}
+.ebox span{position:absolute;top:100%;left:0;font-family:var(--lab);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--seal);white-space:nowrap;margin-top:2px}
+.pin{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:.3rem;text-decoration:none;z-index:1}
+.pin .dot{display:grid;place-items:center;width:1.45rem;height:1.45rem;border-radius:50%;background:var(--seal);color:var(--on-seal);font-family:var(--lab);font-weight:700;font-size:.78rem;font-variant-numeric:tabular-nums;box-shadow:0 0 0 2px var(--paper-2)}
+.pin .pl{position:absolute;left:100%;margin-left:.25rem;font-family:var(--lab);font-weight:600;font-size:.82rem;letter-spacing:.03em;white-space:nowrap;background:var(--paper-2);padding:0 .2rem;line-height:1.2}
+.pin.lab-l .pl{left:auto;right:100%;margin:0 .25rem 0 0}
+.pin.lab-t .pl{left:50%;bottom:100%;transform:translateX(-50%);margin:0 0 .15rem}
+.pin.lab-b .pl{left:50%;top:100%;transform:translateX(-50%);margin:.15rem 0 0}
+.pin:hover .dot,.pin:focus-visible .dot{background:var(--ink);color:var(--paper)}
+.map-k{grid-column:1/-1;font-family:var(--lab);font-size:.85rem;color:var(--ink-2);letter-spacing:.03em;margin:0}
+
+/* filters */
+.filters{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem;padding:.8rem 0;border-block:1px solid var(--rule)}
+.filters label{font-family:var(--lab);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:.85rem;color:var(--ink-2)}
+.filters select,.filters button{font:inherit;font-family:var(--lab);font-size:1rem;font-weight:600;color:var(--ink);background:var(--paper);border:1.5px solid var(--ink);border-radius:2px;padding:.3rem .5rem;min-height:2.3rem}
+.filters button{cursor:pointer;background:var(--paper-2)}
+.filters button:hover{background:var(--ink);color:var(--paper)}
+.fcount{margin:0 0 0 auto;font-family:var(--lab);font-size:.95rem;color:var(--ink-2)}
+@media (max-width:560px){.fcount{margin-left:0;width:100%}}
+.matrix tr[hidden]{display:none}
+.tier{display:inline-block;font-family:var(--lab);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.74rem;padding:.08rem .45rem;border:1.5px solid currentColor;border-radius:2px;white-space:nowrap}
+.tier-weeknight{color:var(--wn)}
+.tier-weekend{color:var(--we)}
+
+/* recipe */
+.recipe{padding-block:3.6rem 1rem;border-top:3px double var(--ink);margin-top:3rem}
+.label{position:relative;background:var(--paper-2);border:2px solid var(--ink);box-shadow:inset 0 0 0 5px var(--paper-2),inset 0 0 0 6.5px var(--ink);padding:1.6rem 1.6rem 1.2rem;max-width:48rem;margin:0 0 1.6rem}
+.lab-top{display:flex;flex-wrap:wrap;gap:.2rem 1rem;font-family:var(--lab);font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:.9rem;color:var(--ink-2);margin:0 5.5rem .5rem 0}
+.lab-no{color:var(--seal)}
+.lab-dish{font-family:var(--disp);font-weight:900;font-size:clamp(2.3rem,8vw,4.2rem);line-height:.92;letter-spacing:-.005em;margin-right:4.5rem}
+.lab-alt{font-family:var(--lab);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.95rem;color:var(--foil);margin:.35rem 0 0}
+.lab-local{font-style:italic;color:var(--ink-2);margin:.55rem 0 1rem;font-size:1.02rem}
+.loc-note{font-style:normal;font-size:.9em}
+.ribbon{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .7rem;background:var(--ribbon);color:var(--on-ribbon);padding:.45rem .8rem;margin:0 -.4rem 1rem;font-family:var(--lab)}
+.rb-k{font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:.82rem}
+.rb-v{font-family:var(--disp);font-weight:800;font-size:1.2rem;letter-spacing:.01em}
+.ribbon .sw{border-color:var(--on-ribbon)}
+.rb-srm{font-weight:600;font-size:.92rem;letter-spacing:.04em}
+.lab-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.6rem 1rem;margin:0 0 .9rem}
+.lab-stats div{min-width:0;border-top:1px solid var(--ink);padding-top:.3rem}
+.lab-stats .wide{grid-column:1/-1}
+.lab-stats dt{font-family:var(--lab);font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.74rem;color:var(--ink-2)}
+.lab-stats dd{margin:0;font-family:var(--lab);font-weight:700;font-size:1.12rem;font-variant-numeric:tabular-nums}
+@media (max-width:520px){.lab-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.label{padding:1.3rem 1.1rem 1rem}}
+.lab-foot{display:flex;flex-wrap:wrap;gap:.3rem 1.1rem;align-items:center;font-family:var(--lab);font-size:.9rem;letter-spacing:.03em;color:var(--ink-2);margin:0}
+/* crown cap */
+.cap{position:absolute;top:-1.6rem;right:1.1rem;width:5.2rem;height:5.2rem;clip-path:polygon(50.00% 0.00%,56.78% 5.01%,64.74% 2.22%,69.74% 9.01%,78.17% 8.69%,80.95% 16.65%,89.09% 18.83%,89.40% 27.25%,96.54% 31.73%,94.36% 39.88%,99.86% 46.26%,95.37% 53.40%,98.75% 61.13%,92.35% 66.62%,93.30% 75.00%,85.57% 78.37%,84.01% 86.65%,75.63% 87.59%,71.69% 95.05%,63.41% 93.48%,57.45% 99.44%,50.00% 95.50%,42.55% 99.44%,36.59% 93.48%,28.31% 95.05%,24.37% 87.59%,15.99% 86.65%,14.43% 78.37%,6.70% 75.00%,7.65% 66.62%,1.25% 61.13%,4.63% 53.40%,0.14% 46.26%,5.64% 39.88%,3.46% 31.73%,10.60% 27.25%,10.91% 18.83%,19.05% 16.65%,21.83% 8.69%,30.26% 9.01%,35.26% 2.22%,43.22% 5.01%);background:radial-gradient(circle at 38% 32%,var(--cap-hi),var(--cap) 58%,var(--cap) 100%);display:grid;place-items:center;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.cap span{display:grid;place-items:center;width:76%;height:76%;border-radius:50%;border:1.5px solid var(--cap-ink);font-family:var(--lab);font-weight:700;letter-spacing:.08em;font-size:.82rem;color:var(--cap-ink);text-align:center}
+.standfirst{max-width:var(--measure);font-family:var(--disp);font-weight:500;font-size:1.32rem;line-height:1.3;margin:0 0 1.2rem}
+.headnote{max-width:var(--measure)}
+.checked{font-size:.9rem;color:var(--ink-2);border-left:3px solid var(--foil);padding-left:.8rem}
+.checked b{color:var(--foil)}
+.cols{display:grid;grid-template-columns:minmax(0,22rem) minmax(0,1fr);gap:2.6rem;margin-top:2rem}
+@media (max-width:860px){.cols{grid-template-columns:minmax(0,1fr);gap:1.8rem}}
+.col-side,.col-main{min-width:0}
+.recipe h3{font-family:var(--disp);font-weight:800;font-size:1.4rem;margin:0 0 .6rem}
+.recipe section{margin-bottom:1.8rem}
+.beerbox{background:var(--paper-2);padding:1rem 1.1rem .4rem;border-top:3px solid var(--amber)}
+.beerbox p{font-size:.95rem}
+.grp{font-family:var(--lab);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:.85rem;color:var(--seal);margin:1rem 0 .2rem}
+.shop{list-style:none;margin:0;padding:0;font-size:.93rem}
+.shop li{display:grid;grid-template-columns:5.6rem minmax(0,1fr) auto;gap:.6rem;padding:.38rem 0;border-bottom:1px solid var(--rule);align-items:baseline}
+.shop .q{font-family:var(--lab);font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.shop .m{display:block;font-weight:500;color:var(--ink-2);font-size:.88em}
+.shop .it{min-width:0;line-height:1.35}
+.shop .pr{font-family:var(--lab);font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap;cursor:help}
+.badge{display:inline-block;font-family:var(--lab);font-weight:700;font-size:.64rem;letter-spacing:.08em;padding:0 .25rem;margin-left:.3rem;border:1px solid currentColor;border-radius:2px;vertical-align:.1em}
+.b-bls{color:var(--wn)}
+.b-est{color:var(--ink-2)}
+.cost{margin-top:1rem;padding:.9rem 1rem;border:2px solid var(--ink)}
+.cost>div{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.ck{font-family:var(--lab);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem;color:var(--ink-2)}
+.cv{font-family:var(--disp);font-weight:800;font-size:1.5rem;font-variant-numeric:tabular-nums}
+.basis{font-size:.8rem;color:var(--ink-2);margin:.5rem 0 0}
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding-left:2.7rem;margin-bottom:1rem;max-width:var(--measure)}
+.steps li::before{content:counter(s);position:absolute;left:0;top:-.2rem;font-family:var(--disp);font-weight:900;font-size:1.7rem;color:var(--amber);line-height:1}
+.serve{max-width:var(--measure)}
+.subs{margin:0}
+.sub{margin-bottom:.8rem;max-width:var(--measure)}
+.sub dt{font-family:var(--lab);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:.92rem;color:var(--seal)}
+.sub dd{margin:0}
+.twin{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:0 2rem}
+.alc{font-size:.9rem;color:var(--ink-2);max-width:var(--measure);border-top:1px solid var(--rule);padding-top:.8rem}
+.top{font-family:var(--lab);font-size:.95rem;letter-spacing:.04em}
+
+/* back matter */
+.shelfcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,22rem),1fr));gap:1rem 3rem}
+.shelfcols h3{font-family:var(--disp);font-weight:800;font-size:1.35rem;margin-bottom:.4rem}
+.shelf{list-style:none;margin:0;padding:0;font-size:.93rem}
+.shelf li{display:grid;grid-template-columns:minmax(0,1fr) 2rem;gap:.1rem .6rem;padding:.42rem 0;border-bottom:1px solid var(--rule)}
+.sh-n{font-weight:600}
+.sh-c{font-family:var(--lab);font-weight:700;text-align:right;color:var(--seal);font-variant-numeric:tabular-nums}
+.sh-r{grid-column:1/-1;font-size:.88rem;color:var(--ink-2)}
+.league .bar{min-width:9.5rem}
+.barwrap{display:flex;align-items:center;gap:.5rem}
+.barfill{display:block;height:.9rem;background:linear-gradient(90deg,var(--amber),var(--seal));-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.barv{font-family:var(--lab);font-weight:700}
+.barwrap .barfill{flex:none}
+#prices h3{font-family:var(--disp);font-weight:800;font-size:1.35rem;margin:1.4rem 0 .5rem}
+.clock{list-style:none;margin:0;padding:0;max-width:52rem}
+.clock li{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:.3rem 1.4rem;padding:.6rem 0;border-bottom:1px solid var(--rule)}
+.clock a{font-weight:600}
+@media (max-width:560px){.clock li{grid-template-columns:minmax(0,1fr)}}
+.sources{font-size:.9rem;padding-left:1.8rem;max-width:52rem}
+.sources li{margin-bottom:.35rem;overflow-wrap:anywhere}
+.sources li:target{background:var(--paper-2)}
+.foot{border-top:1px solid var(--rule);padding-block:1.4rem 3rem;margin-top:2.4rem;font-family:var(--lab);letter-spacing:.06em;color:var(--ink-2)}
+
+@media print{
+  :root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--paper:#fff;--paper-2:#fff;--paper-3:#eee;--ink:#000;--ink-2:#333;--rule:#bbb;--seal:#000;--on-seal:#fff;--ribbon:#fff;--on-ribbon:#000;--foil:#333;--amber:#555;--wn:#000;--we:#000;color-scheme:light}
+  body{font-size:10.5pt;padding:0}
+  .filters,.skip,.top,.contents-x{display:none!important}
+  .matrix tr[hidden]{display:table-row!important}
+  .recipe{break-before:page;border-top:0;padding-top:0;margin-top:0}
+  .label{box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 5px #000}
+  .ribbon{background:#fff;color:#000;border:1.5px solid #000}
+  .beerbox{border:1px solid #000}
+  .steps li,.shop li,.sub{break-inside:avoid}
+  a{text-decoration:none}
+  .cols{grid-template-columns:minmax(0,17rem) minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to the recipes</a>
+<header class="mast">
+  <div class="mast-in">
+    <p class="kicker">Twelve savoury dishes cooked with beer</p>
+    <h1><span class="h1a">Brewed</span> <span class="h1b">With</span></h1>
+    <p class="stand">Twelve dinners from twelve countries in which beer goes into the pot: braised, roasted, poached, steamed and stirred into sauce. Everything comes from an ordinary US supermarket, fits a 4.5-quart Dutch oven, a skillet and a sheet tray, and is checked against its sources. Seven are weeknight dinners, ready in an hour or less.</p>
+    <div class="strip" aria-hidden="true"><span style="background:#FFD878"></span><span style="background:#FFCA5A"></span><span style="background:#FFBF42"></span><span style="background:#F8A600"></span><span style="background:#EA8F00"></span><span style="background:#DE7C00"></span><span style="background:#CB6200"></span><span style="background:#B04500"></span><span style="background:#9B3200"></span><span style="background:#821E00"></span><span style="background:#660D00"></span><span style="background:#470606"></span><span style="background:#36080A"></span></div>
+    <p class="strip-k" aria-hidden="true"><span>Straw</span><span>Amber</span><span>Brown</span><span>Stout</span></p>
+  </div>
+</header>
+<main id="main">
+<nav class="contents" aria-label="Contents"><h2>Contents</h2><ol><li><a href="#belgium"><span class="c-n">01</span><span class="c-d">Stoofvlees</span><span class="c-c">Belgium</span></a></li>
+<li><a href="#czechia"><span class="c-n">02</span><span class="c-d">Pivní guláš</span><span class="c-c">Czechia</span></a></li>
+<li><a href="#england"><span class="c-n">03</span><span class="c-d">Steak and ale pie</span><span class="c-c">England</span></a></li>
+<li><a href="#ireland"><span class="c-n">04</span><span class="c-d">Beef and stout stew</span><span class="c-c">Ireland</span></a></li>
+<li><a href="#germany"><span class="c-n">05</span><span class="c-d">Schweinsbraten</span><span class="c-c">Germany</span></a></li>
+<li><a href="#france"><span class="c-n">06</span><span class="c-d">Coq à la bière</span><span class="c-c">France</span></a></li>
+<li><a href="#portugal"><span class="c-n">07</span><span class="c-d">Francesinha</span><span class="c-c">Portugal</span></a></li>
+<li><a href="#usa"><span class="c-n">08</span><span class="c-d">Beer brats</span><span class="c-c">United States</span></a></li>
+<li><a href="#mexico"><span class="c-n">09</span><span class="c-d">Discada norteña</span><span class="c-c">Mexico</span></a></li>
+<li><a href="#peru"><span class="c-n">10</span><span class="c-d">Arroz con pollo</span><span class="c-c">Peru</span></a></li>
+<li><a href="#vietnam"><span class="c-n">11</span><span class="c-d">Tôm hấp bia sả</span><span class="c-c">Vietnam</span></a></li>
+<li><a href="#korea"><span class="c-n">12</span><span class="c-d">Maekju suyuk</span><span class="c-c">South Korea</span></a></li></ol>
+<p class="contents-x"><a href="#essay">Cooking with beer</a> · <a href="#alcohol">Alcohol and children</a> · <a href="#styles">Beer styles for cooks</a> · <a href="#index">Index</a> · <a href="#shelf">The shelf</a> · <a href="#league">Cost per head</a> · <a href="#clock">Where the clock won</a> · <a href="#sources">Sources</a></p></nav>
+<section class="sect" id="essay" aria-labelledby="essay-h">
+<h2 id="essay-h">Cooking with beer</h2>
+<div class="prose essay">
+<p>Beer turned out to have a smaller place in the world's cooking than this book first assumed, and finding twelve honest dishes took some looking. Where beer does go into the pot, it tends to arrive by one of two routes, and the dishes here sort neatly between them.</p>
+<p>The first route is the old brewing belt of northern Europe, where beer was the everyday drink and simply took the place wine held further south. The Routard guide puts the divide in northern France plainly: beer in the north, and cream and butter further south.<sup class="cite"><a href="#src-31" aria-label="Source 31">31</a></sup> In Flanders, Bohemia, Bavaria, England and Ireland, the dark, malty beers people drank became the liquid for long braises and roasts, which is why so much of this book is beef cooked slowly in brown beer. Belgium's beer culture, now on UNESCO's heritage list, explicitly includes cooking with beer.<sup class="cite"><a href="#src-17" aria-label="Source 17">17</a></sup></p>
+<p>The second route follows lager as it spread in the 19th and 20th centuries. German brewers who left after 1848 built Milwaukee's industry.<sup class="cite"><a href="#src-36" aria-label="Source 36">36</a></sup> Mexico's first lager was brewed in 1869 at a brewery founded by Emil Dercher, and Monterrey's Cervecería Cuauhtémoc followed in 1890.<sup class="cite"><a href="#src-43" aria-label="Source 43">43</a></sup> Cusqueña was founded in Cusco in 1908 by Ernesto Günther.<sup class="cite"><a href="#src-48" aria-label="Source 48">48</a></sup> Under French rule, Vietnam's first breweries opened in Saigon in 1875 and Hanoi in 1890.<sup class="cite"><a href="#src-52" aria-label="Source 52">52</a></sup> Korea's first brewery opened in Seoul in 1908.<sup class="cite"><a href="#src-56" aria-label="Source 56">56</a></sup> Where lager arrived late, it entered the kitchen as a light, cheap liquid: for poaching sausages, steaming shrimp, boiling pork or loosening a pan. The beer in those dishes is often recent and sometimes optional, and the recipes say so.</p>
+<p>The gaps matter too. Africa has some of the oldest beer traditions, the sorghum and millet beers brewed across the continent for longer than written records go back.<sup class="cite"><a href="#src-58" aria-label="Source 58">58</a></sup> They are drunk while still fermenting,<sup class="cite"><a href="#src-57" aria-label="Source 57">57</a></sup> and are hard to find outside the places that make them. I found no documented savoury dish cooked with them, and lager-era cooking in southern Africa survives mostly as beer bread. Oceania has the same story with damper. Beyond China, Vietnam and Korea, Asian cooking makes little use of beer, and the Chinese beer duck was dropped because duck is hard to buy in a US supermarket. The result leans on Europe, which is an honest picture of where beer cooking lives.</p>
+<p>What the beer does in the pot depends on its style more than its colour. Malt gives sweetness and body, and darker, roasted malts add depth. Hop bitterness is the one thing to watch, because it does not cook away. The style guide below explains which beers to use and the one to keep out.</p>
+</div>
+</section>
+
+<section class="sect" id="alcohol" aria-labelledby="alcohol-h">
+<h2 id="alcohol-h">Alcohol and children</h2>
+<div class="prose">
+<p>Cooking does not remove all the alcohol from a dish. The USDA measured how much stays behind after common methods, and the figures below are its retention factors, the share of the original alcohol left in the food.<sup class="cite"><a href="#src-1" aria-label="Source 1">1</a></sup><sup class="cite"><a href="#src-2" aria-label="Source 2">2</a></sup> Long, stirred simmering removes the most. Brief cooking, liquid kept hot and served, and anything baked without stirring keep much more.</p>
+<p>Beer is weak to start with, so the absolute amounts here are small. The last column estimates the grams of alcohol in one serving at each recipe's retention band, assuming the ABV listed and that the serving carries its share of the pot. One US standard drink contains about 14 g.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup> How much a child should have, if any, is a call for parents, and every recipe gives a non-alcoholic option.</p>
+<p>Beer sold as non-alcoholic in the US may legally contain up to 0.5% alcohol by volume; only beer labelled alcohol-free has none.<sup class="cite"><a href="#src-4" aria-label="Source 4">4</a></sup></p>
+</div>
+<div class="tablewrap"><table class="data"><caption>USDA alcohol retention factors, Release 6</caption>
+<thead><tr><th scope="col">Method</th><th scope="col">Time</th><th scope="col" class="n">Retained</th></tr></thead><tbody>
+<tr><td>Stirred into hot liquid, removed from heat</td><td>—</td><td class="n">85%</td></tr>
+<tr><td>Flamed</td><td>—</td><td class="n">75%</td></tr>
+<tr><td>No heat, stored overnight</td><td>—</td><td class="n">70%</td></tr>
+<tr><td>Baked, not stirred into mixture</td><td>25 min</td><td class="n">45%</td></tr>
+<tr><td>Baked or simmered, stirred into mixture</td><td>15 min</td><td class="n">40%</td></tr>
+<tr><td></td><td>30 min</td><td class="n">35%</td></tr>
+<tr><td></td><td>1 hr</td><td class="n">25%</td></tr>
+<tr><td></td><td>1½ hr</td><td class="n">20%</td></tr>
+<tr><td></td><td>2 hr</td><td class="n">10%</td></tr>
+<tr><td></td><td>2½ hr</td><td class="n">5%</td></tr>
+</tbody></table></div>
+<div class="tablewrap"><table class="data"><caption>Each recipe's band, with an estimate per serving</caption>
+<thead><tr><th scope="col">Recipe</th><th scope="col" class="n">Beer used</th><th scope="col" class="n">Alcohol per serving before cooking</th><th scope="col" class="n">Band</th><th scope="col" class="n">Estimated per serving</th></tr></thead><tbody>
+<tr><td><a href="#belgium">Stoofvlees</a></td><td class="n">660 ml at 7.0%</td><td class="n">6.1 g</td><td class="n">5%</td><td class="n">0.3 g</td></tr>
+<tr><td><a href="#czechia">Pivní guláš</a></td><td class="n">355 ml at 4.5%</td><td class="n">2.1 g</td><td class="n">10%</td><td class="n">0.2 g</td></tr>
+<tr><td><a href="#england">Steak and ale pie</a></td><td class="n">530 ml at 5.0%</td><td class="n">3.5 g</td><td class="n">5–10%</td><td class="n">0.2–0.3 g</td></tr>
+<tr><td><a href="#ireland">Beef and stout stew</a></td><td class="n">440 ml at 4.2%</td><td class="n">2.4 g</td><td class="n">10%</td><td class="n">0.2 g</td></tr>
+<tr><td><a href="#germany">Schweinsbraten</a></td><td class="n">530 ml at 5.0%</td><td class="n">3.5 g</td><td class="n">20%</td><td class="n">0.7 g</td></tr>
+<tr><td><a href="#france">Coq à la bière</a></td><td class="n">355 ml at 6.5%</td><td class="n">4.6 g</td><td class="n">35%</td><td class="n">1.6 g</td></tr>
+<tr><td><a href="#portugal">Francesinha</a></td><td class="n">355 ml at 5.0%</td><td class="n">3.5 g</td><td class="n">40%</td><td class="n">1.4 g</td></tr>
+<tr><td><a href="#usa">Beer brats</a></td><td class="n">710 ml at 4.6%</td><td class="n">5.2 g</td><td class="n">40–85%</td><td class="n">2.1–4.4 g</td></tr>
+<tr><td><a href="#mexico">Discada norteña</a></td><td class="n">355 ml at 4.5%</td><td class="n">2.1 g</td><td class="n">40%</td><td class="n">0.8 g</td></tr>
+<tr><td><a href="#peru">Arroz con pollo</a></td><td class="n">355 ml at 5.0%</td><td class="n">2.3 g</td><td class="n">35%</td><td class="n">0.8 g</td></tr>
+<tr><td><a href="#vietnam">Tôm hấp bia sả</a></td><td class="n">250 ml at 4.9%</td><td class="n">2.4 g</td><td class="n">40–85%</td><td class="n">1.0–2.1 g</td></tr>
+<tr><td><a href="#korea">Maekju suyuk</a></td><td class="n">355 ml at 4.5%</td><td class="n">3.2 g</td><td class="n">25–35%</td><td class="n">0.8–1.1 g</td></tr>
+</tbody></table></div>
+<p class="note">These are rough bands. The USDA table measures particular dishes, and retention also depends on pot size and the other ingredients. Steaming is not in the table, so the Vietnamese shrimp takes the nearest figures. Where cooking liquid is discarded, as with the Korean pork, the true figure on the plate is likely lower.</p>
+</section>
+
+<section class="sect" id="styles" aria-labelledby="styles-h">
+<h2 id="styles-h">Beer styles for cooks</h2>
+<p class="prose lead">Colour is given in SRM, the brewers' scale, from about 2 for straw-pale lager to 40 for black stout. Bitterness is given in IBU. For cooking, bitterness matters more than colour. Ranges are from the BJCP 2021 style guidelines.</p>
+<div class="styles"><div class="style"><div class="st-h"><span class="sw" style="--c1:#FFD878;--c2:#FFBF42" aria-hidden="true"></span><h3>American lager</h3></div>
+<p class="st-n">SRM 2–3.5 (straw) · IBU 8–18<sup class="cite"><a href="#src-7" aria-label="Source 7">7</a></sup></p>
+<p>Light and barely bitter. The safe choice for poaching, steaming and boiling, where the beer flavours food without reducing.</p><p class="st-ex"><b>In the shop:</b> Miller High Life, Pabst Blue Ribbon</p><p class="st-ex"><b>Used in:</b> <a href="#usa">Beer brats</a>, <a href="#vietnam">Tôm hấp bia sả</a>, <a href="#korea">Maekju suyuk</a></p></div>
+<div class="style"><div class="st-h"><span class="sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span><h3>International pale lager</h3></div>
+<p class="st-n">SRM 2–6 (straw to gold) · IBU 18–25<sup class="cite"><a href="#src-8" aria-label="Source 8">8</a></sup></p>
+<p>Crisp and bready. Good for quick sauces and deglazing, and reduces cleanly for a short time.</p><p class="st-ex"><b>In the shop:</b> Heineken, Tecate, Super Bock</p><p class="st-ex"><b>Used in:</b> <a href="#portugal">Francesinha</a>, <a href="#mexico">Discada norteña</a></p></div>
+<div class="style"><div class="st-h"><span class="sw" style="--c1:#C35900;--c2:#470606" aria-hidden="true"></span><h3>Dark lager (Czech dark, Munich dunkel)</h3></div>
+<p class="st-n">SRM 14–35 (brown to black) · IBU 8–34<sup class="cite"><a href="#src-10" aria-label="Source 10">10</a></sup></p>
+<p>Caramel and toast with little bitterness. Makes a sweet, bready gravy and holds up to long cooking.</p><p class="st-ex"><b>In the shop:</b> Shiner Bock, a Bavarian dunkel, Kozel Dark</p><p class="st-ex"><b>Used in:</b> <a href="#czechia">Pivní guláš</a>, <a href="#germany">Schweinsbraten</a>, <a href="#peru">Arroz con pollo</a></p></div>
+<div class="style"><div class="st-h"><span class="sw" style="--c1:#DE7C00;--c2:#B04500" aria-hidden="true"></span><h3>Belgian dubbel</h3></div>
+<p class="st-n">SRM 10–17 (amber to brown) · IBU 15–25<sup class="cite"><a href="#src-16" aria-label="Source 16">16</a></sup></p>
+<p>Dark fruit and soft malt. The best all-round braising beer, because its low bitterness survives hours in the pot.</p><p class="st-ex"><b>In the shop:</b> Chimay Première, Leffe Brune</p><p class="st-ex"><b>Used in:</b> <a href="#belgium">Stoofvlees</a></p></div>
+<div class="style"><div class="st-h"><span class="sw" style="--c1:#B04500;--c2:#8E2900" aria-hidden="true"></span><h3>Oud bruin (Flemish brown)</h3></div>
+<p class="st-n">SRM 17–22 (brown to dark brown) · IBU 20–25<sup class="cite"><a href="#src-14" aria-label="Source 14">14</a></sup></p>
+<p>Malty with a gentle sourness, which gives stews their sweet-sharp finish. Rare in US shops; a dubbel with a spoon of vinegar comes close.</p><p class="st-ex"><b>In the shop:</b> Uncommon in US supermarkets</p><p class="st-ex"><b>Used in:</b> <a href="#belgium">Stoofvlees</a></p></div>
+<div class="style"><div class="st-h"><span class="sw" style="--c1:#CF6900;--c2:#8E2900" aria-hidden="true"></span><h3>English brown ale</h3></div>
+<p class="st-n">SRM 12–22 (amber to dark brown) · IBU 20–30<sup class="cite"><a href="#src-11" aria-label="Source 11">11</a></sup></p>
+<p>Nutty and dry. Makes a classic gravy with enough bitterness to cut rich meat.</p><p class="st-ex"><b>In the shop:</b> Samuel Smith's Nut Brown Ale</p><p class="st-ex"><b>Used in:</b> <a href="#england">Steak and ale pie</a></p></div>
+<div class="style"><div class="st-h"><span class="sw" style="--c1:#7B1A00;--c2:#36080A" aria-hidden="true"></span><h3>Irish dry stout</h3></div>
+<p class="st-n">SRM 25–40 (dark brown to black) · IBU 25–45<sup class="cite"><a href="#src-12" aria-label="Source 12">12</a></sup></p>
+<p>Roasted and bitter. Use one can at most and balance it with tomato or a little sugar.</p><p class="st-ex"><b>In the shop:</b> Guinness Draught</p><p class="st-ex"><b>Used in:</b> <a href="#ireland">Beef and stout stew</a></p></div>
+<div class="style"><div class="st-h"><span class="sw" style="--c1:#F8A600;--c2:#A13700" aria-hidden="true"></span><h3>Bière de garde</h3></div>
+<p class="st-n">SRM 6–19 (gold to brown) · IBU 18–28<sup class="cite"><a href="#src-15" aria-label="Source 15">15</a></sup></p>
+<p>Malt-forward farmhouse beer with modest bitterness. Rounded and good with chicken and cream.</p><p class="st-ex"><b>In the shop:</b> Rare; Leffe Blonde or Samuel Adams Boston Lager as stand-ins</p><p class="st-ex"><b>Used in:</b> <a href="#france">Coq à la bière</a></p></div>
+<div class="style avoid"><div class="st-h"><span class="sw" style="--c1:#F8A600;--c2:#C35900" aria-hidden="true"></span><h3>American IPA: keep it out of the pot</h3></div>
+<p class="st-n">SRM 6–14 (gold to brown) · IBU 40–70<sup class="cite"><a href="#src-13" aria-label="Source 13">13</a></sup></p>
+<p>Hop bitterness does not boil away. As water and alcohol leave the pot, the bitter compounds stay behind, so every spoonful of a reduced sauce is more bitter than the beer was. A 40–70 IBU beer cooked down by half tastes harsh and medicinal. Every recipe in this book uses a low-bitterness style for that reason.</p></div></div>
+</section>
+
+<section class="sect" id="index" aria-labelledby="index-h">
+<h2 id="index-h">Index</h2>
+<div class="map" aria-label="Map of where each dish comes from">
+  <div class="world" role="img" aria-label="World strip: Europe holds seven dishes; the others are in Wisconsin, Monterrey, Lima, Ho Chi Minh City and Seoul.">
+    <span class="gl gv" style="left:3.70%"></span>
+<span class="gl gv" style="left:14.81%"></span>
+<span class="gl gv" style="left:25.93%"></span>
+<span class="gl gv" style="left:37.04%"></span>
+<span class="gl gv" style="left:48.15%"></span>
+<span class="gl gv" style="left:59.26%"></span>
+<span class="gl gv" style="left:70.37%"></span>
+<span class="gl gv" style="left:81.48%"></span>
+<span class="gl gv" style="left:92.59%"></span>
+<span class="gl gh eq" style="top:71.26%"></span>
+<span class="gl gh" style="top:36.78%"></span>
+<span class="gl gh" style="top:2.30%"></span>
+    <span class="ebox" style="left:43.7%;top:6.9%;width:11.1%;height:18.4%"><span>Europe inset</span></span>
+    <span class="cont" style="left:11.9%;top:8.0%">North America</span><span class="cont" style="left:27.4%;top:93.1%">South America</span><span class="cont" style="left:54.8%;top:62.1%">Africa</span><span class="cont" style="left:80.7%;top:11.5%">Asia</span>
+    <a class="pin w " href="#usa" style="left:15.7%;top:21.0%" aria-label="Beer brats, United States"><span class="dot">8</span><span class="pl">United States</span></a>
+<a class="pin w " href="#mexico" style="left:11.0%;top:41.8%" aria-label="Discada norteña, Mexico"><span class="dot">9</span><span class="pl">Mexico</span></a>
+<a class="pin w " href="#peru" style="left:19.6%;top:85.1%" aria-label="Arroz con pollo, Peru"><span class="dot">10</span><span class="pl">Peru</span></a>
+<a class="pin w lab-l" href="#vietnam" style="left:87.7%;top:58.9%" aria-label="Tôm hấp bia sả, Vietnam"><span class="dot">11</span><span class="pl">Vietnam</span></a>
+<a class="pin w lab-l" href="#korea" style="left:95.2%;top:28.1%" aria-label="Maekju suyuk, South Korea"><span class="dot">12</span><span class="pl">South Korea</span></a>
+  </div>
+  <div class="euro" role="img" aria-label="Europe inset with seven dishes">
+    <span class="gl gv" style="left:6.67%"></span>
+<span class="gl gv" style="left:23.33%"></span>
+<span class="gl gv" style="left:40.00%"></span>
+<span class="gl gv" style="left:56.67%"></span>
+<span class="gl gv" style="left:73.33%"></span>
+<span class="gl gv" style="left:90.00%"></span>
+<span class="gl gh" style="top:100.00%"></span>
+<span class="gl gh" style="top:68.75%"></span>
+<span class="gl gh" style="top:37.50%"></span>
+<span class="gl gh" style="top:6.25%"></span>
+    <a class="pin e lab-t" href="#belgium" style="left:54.7%;top:29.9%" aria-label="Stoofvlees, Belgium"><span class="dot">1</span><span class="pl">Belgium</span></a>
+<a class="pin e lab-l" href="#czechia" style="left:88.1%;top:37.0%" aria-label="Pivní guláš, Czechia"><span class="dot">2</span><span class="pl">Czechia</span></a>
+<a class="pin e lab-l" href="#england" style="left:39.6%;top:28.1%" aria-label="Steak and ale pie, England"><span class="dot">3</span><span class="pl">England</span></a>
+<a class="pin e lab-l" href="#ireland" style="left:19.1%;top:16.6%" aria-label="Beef and stout stew, Ireland"><span class="dot">4</span><span class="pl">Ireland</span></a>
+<a class="pin e " href="#germany" style="left:78.6%;top:49.1%" aria-label="Schweinsbraten, Germany"><span class="dot">5</span><span class="pl">Germany</span></a>
+<a class="pin e lab-b" href="#france" style="left:50.2%;top:33.6%" aria-label="Coq à la bière, France"><span class="dot">6</span><span class="pl">France</span></a>
+<a class="pin e lab-r" href="#portugal" style="left:11.3%;top:92.8%" aria-label="Francesinha, Portugal"><span class="dot">7</span><span class="pl">Portugal</span></a>
+  </div>
+  <p class="map-k">Equirectangular sketch; gridlines every 30° (world) and 5° (Europe). Pins link to recipes.</p>
+</div>
+<div class="filters" role="group" aria-label="Filter the index">
+  <label for="f-family">Beer</label><select id="f-family"><option value="">All beers</option><option>Pale lager</option><option>Dark lager</option><option>Ale &amp; stout</option></select>
+  <label for="f-region">Region</label><select id="f-region"><option value="">All regions</option><option>Europe</option><option>Americas</option><option>Asia</option></select>
+  <label for="f-tier">When</label><select id="f-tier"><option value="">Any night</option><option>Weeknight</option><option>Weekend</option></select>
+  <button type="button" id="f-reset">Clear</button>
+  <p id="f-count" class="fcount" aria-live="polite">Showing all 12</p>
+</div>
+<div class="tablewrap"><table class="data matrix"><caption class="vh">Recipes by beer style, region, protein and time</caption>
+<thead><tr><th scope="col" class="n">No.</th><th scope="col">Dish</th><th scope="col">Beer</th><th scope="col">Region</th><th scope="col">Protein</th><th scope="col" class="n">Total</th><th scope="col">When</th><th scope="col" class="n">Per head</th></tr></thead>
+<tbody><tr data-family="Ale & stout" data-region="Europe" data-tier="Weekend">
+<td class="n">01</td><td><a href="#belgium"><b>Stoofvlees</b></a><span class="sm">Belgium</span></td>
+<td><span class="sw sm-sw" style="--c1:#DE7C00;--c2:#B04500" aria-hidden="true"></span>Belgian dubbel or Flemish brown<span class="sm">Ale & stout · SRM 10–17</span></td>
+<td>Europe</td><td>Beef</td><td class="n">3 hr 15 min</td><td><span class="tier tier-weekend">Weekend</span></td><td class="n">$6.57</td></tr>
+<tr data-family="Dark lager" data-region="Europe" data-tier="Weekend">
+<td class="n">02</td><td><a href="#czechia"><b>Pivní guláš</b></a><span class="sm">Czechia</span></td>
+<td><span class="sw sm-sw" style="--c1:#B04500;--c2:#470606" aria-hidden="true"></span>Czech dark lager<span class="sm">Dark lager · SRM 17–35</span></td>
+<td>Europe</td><td>Beef</td><td class="n">2 hr 45 min</td><td><span class="tier tier-weekend">Weekend</span></td><td class="n">$5.03</td></tr>
+<tr data-family="Ale & stout" data-region="Europe" data-tier="Weekend">
+<td class="n">03</td><td><a href="#england"><b>Steak and ale pie</b></a><span class="sm">England</span></td>
+<td><span class="sw sm-sw" style="--c1:#CF6900;--c2:#8E2900" aria-hidden="true"></span>English brown ale<span class="sm">Ale & stout · SRM 12–22</span></td>
+<td>Europe</td><td>Beef</td><td class="n">3 hr 15 min</td><td><span class="tier tier-weekend">Weekend</span></td><td class="n">$5.89</td></tr>
+<tr data-family="Ale & stout" data-region="Europe" data-tier="Weekend">
+<td class="n">04</td><td><a href="#ireland"><b>Beef and stout stew</b></a><span class="sm">Ireland</span></td>
+<td><span class="sw sm-sw" style="--c1:#7B1A00;--c2:#36080A" aria-hidden="true"></span>Irish dry stout<span class="sm">Ale & stout · SRM 25–40</span></td>
+<td>Europe</td><td>Beef</td><td class="n">2 hr 45 min</td><td><span class="tier tier-weekend">Weekend</span></td><td class="n">$5.47</td></tr>
+<tr data-family="Dark lager" data-region="Europe" data-tier="Weekend">
+<td class="n">05</td><td><a href="#germany"><b>Schweinsbraten</b></a><span class="sm">Germany</span></td>
+<td><span class="sw sm-sw" style="--c1:#B04500;--c2:#6A0E00" aria-hidden="true"></span>Munich dunkel<span class="sm">Dark lager · SRM 17–28</span></td>
+<td>Europe</td><td>Pork</td><td class="n">2 hr 30 min</td><td><span class="tier tier-weekend">Weekend</span></td><td class="n">$2.83</td></tr>
+<tr data-family="Ale & stout" data-region="Europe" data-tier="Weeknight">
+<td class="n">06</td><td><a href="#france"><b>Coq à la bière</b></a><span class="sm">France</span></td>
+<td><span class="sw sm-sw" style="--c1:#F8A600;--c2:#A13700" aria-hidden="true"></span>Bière de garde or amber<span class="sm">Ale & stout · SRM 6–19</span></td>
+<td>Europe</td><td>Chicken</td><td class="n">1 hr</td><td><span class="tier tier-weeknight">Weeknight</span></td><td class="n">$3.66</td></tr>
+<tr data-family="Pale lager" data-region="Europe" data-tier="Weeknight">
+<td class="n">07</td><td><a href="#portugal"><b>Francesinha</b></a><span class="sm">Portugal</span></td>
+<td><span class="sw sm-sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>Pale lager<span class="sm">Pale lager · SRM 2–6</span></td>
+<td>Europe</td><td>Beef, ham, sausage</td><td class="n">50 min</td><td><span class="tier tier-weeknight">Weeknight</span></td><td class="n">$6.66</td></tr>
+<tr data-family="Pale lager" data-region="Americas" data-tier="Weeknight">
+<td class="n">08</td><td><a href="#usa"><b>Beer brats</b></a><span class="sm">United States</span></td>
+<td><span class="sw sm-sw" style="--c1:#FFD878;--c2:#FFBF42" aria-hidden="true"></span>American lager<span class="sm">Pale lager · SRM 2–3.5</span></td>
+<td>Americas</td><td>Pork</td><td class="n">35 min</td><td><span class="tier tier-weeknight">Weeknight</span></td><td class="n">$3.14</td></tr>
+<tr data-family="Pale lager" data-region="Americas" data-tier="Weeknight">
+<td class="n">09</td><td><a href="#mexico"><b>Discada norteña</b></a><span class="sm">Mexico</span></td>
+<td><span class="sw sm-sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>Mexican pale lager<span class="sm">Pale lager · SRM 2–6</span></td>
+<td>Americas</td><td>Beef, pork, bacon, chorizo</td><td class="n">50 min</td><td><span class="tier tier-weeknight">Weeknight</span></td><td class="n">$5.49</td></tr>
+<tr data-family="Dark lager" data-region="Americas" data-tier="Weeknight">
+<td class="n">10</td><td><a href="#peru"><b>Arroz con pollo</b></a><span class="sm">Peru</span></td>
+<td><span class="sw sm-sw" style="--c1:#C35900;--c2:#5E0B00" aria-hidden="true"></span>Dark lager (cerveza negra)<span class="sm">Dark lager · SRM 14–30</span></td>
+<td>Americas</td><td>Chicken</td><td class="n">1 hr</td><td><span class="tier tier-weeknight">Weeknight</span></td><td class="n">$3.47</td></tr>
+<tr data-family="Pale lager" data-region="Asia" data-tier="Weeknight">
+<td class="n">11</td><td><a href="#vietnam"><b>Tôm hấp bia sả</b></a><span class="sm">Vietnam</span></td>
+<td><span class="sw sm-sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>Light lager<span class="sm">Pale lager · SRM 2–6</span></td>
+<td>Asia</td><td>Shrimp</td><td class="n">20 min</td><td><span class="tier tier-weeknight">Weeknight</span></td><td class="n">$5.56</td></tr>
+<tr data-family="Pale lager" data-region="Asia" data-tier="Weeknight">
+<td class="n">12</td><td><a href="#korea"><b>Maekju suyuk</b></a><span class="sm">South Korea</span></td>
+<td><span class="sw sm-sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>Light lager<span class="sm">Pale lager · SRM 2–6</span></td>
+<td>Asia</td><td>Pork</td><td class="n">55 min</td><td><span class="tier tier-weeknight">Weeknight</span></td><td class="n">$6.81</td></tr></tbody></table></div>
+</section>
+
+<div class="recipes">
+
+<article class="recipe" id="belgium" aria-labelledby="belgium-title" data-region="Europe" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Braising liquid"><span>BRAISE</span></div>
+  <p class="lab-top"><span class="lab-no">No. 01</span><span>Belgium</span><span class="lab-city">Flanders</span></p>
+  <h2 class="lab-dish" id="belgium-title">Stoofvlees</h2>
+  <p class="lab-alt">carbonade flamande</p>
+  <p class="lab-local" lang="nl">Vlaamse stoofvlees · <span class="loc-note">Dutch; <i>carbonade flamande</i> in French</span></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">Belgian dubbel or Flemish brown</span>
+    <span class="sw" style="--c1:#DE7C00;--c2:#B04500" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 10–17 · amber to brown</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>30 min</dd></div>
+    <div><dt>Total</dt><dd>3 hr 15 min</dd></div>
+    <div><dt>Serves</dt><dd>6</dd></div>
+    <div><dt>Per head</dt><dd>$6.57</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Dutch oven</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weekend">Weekend</span><span>Beer role: Braising liquid</span><span>Alcohol retained: 5%</span></p>
+</div>
+<p class="standfirst">Beef and a great deal of onion, cooked slowly in brown beer until the sauce turns glossy and faintly sour-sweet.</p>
+<div class="headnote"><p>Stoofvlees, also called stoverij in Dutch and carbonade flamande in French, is the Flemish beef-and-onion stew made in beer. It belongs to Belgium, the Netherlands and French Flanders alike, and it is a fixture of Belgian friteries, where it comes with a cone of fries. Its defining ingredients are beef, beer and mustard, with the sauce often thickened by a slice of bread spread with mustard and left to dissolve on top of the pot. Cooks in East and West Flanders add prunes, and some swap the bread for gingerbread or speculaas biscuits.<sup class="cite"><a href="#src-18" aria-label="Source 18">18</a></sup></p>
+<p>The beers named for it are oud bruin (old brown), brown abbey beer and Flanders red.<sup class="cite"><a href="#src-18" aria-label="Source 18">18</a></sup> That choice tells you most of what the beer does here. These are malty, low-bitterness beers, and the old browns carry a gentle sourness, so the pot reduces to something sweet, dark and sharp at once, which is why recipes finish with a spoon of vinegar and one of sugar. The beer is the whole cooking liquid, and nothing about that role is new.</p>
+<p>Belgium's beer culture was added to UNESCO's list of intangible heritage in 2016. UNESCO's own citation counts almost 1,500 Belgian beers and names cooking with beer as part of the tradition.<sup class="cite"><a href="#src-17" aria-label="Source 17">17</a></sup> You will often read that stoofvlees is medieval, or that it dates from the 18th century. I found no documentation for either claim, so treat them as folklore.</p>
+<p class="checked"><b>Checked.</b> Beer, mustard and bread are confirmed as the core of the dish. Medieval and 18th-century origin dates are undocumented and left out.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="belgium-beer">
+      <h3 id="belgium-beer">The beer</h3>
+      <p>A Belgian dubbel (SRM 10–17, IBU 15–25) gives dark-fruit malt and very little bitterness, so it survives three hours of reduction.<sup class="cite"><a href="#src-16" aria-label="Source 16">16</a></sup> An oud bruin (SRM 17–22, IBU 20–25) is the more traditional pick and adds a mild sourness.<sup class="cite"><a href="#src-14" aria-label="Source 14">14</a></sup></p>
+      <p><b>On the shelf.</b> Chimay Première (the red label) and Leffe Brune are the dubbels most often on US supermarket shelves. Flemish browns are uncommon; if you find one, use it.</p>
+      <p><b>Avoid.</b> Any IPA or hop-forward pale ale. American IPAs run to 40–70 IBU, and that bitterness concentrates as the liquid cooks down.<sup class="cite"><a href="#src-13" aria-label="Source 13">13</a></sup></p>
+    </section>
+    <section aria-labelledby="belgium-shop">
+      <h3 id="belgium-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">3 lb<span class="m">1.36 kg</span></span><span class="it">Beef chuck roast, cut in 2-inch (5 cm) cubes</span><span class="pr" title="BLS: $9.19 per lb">$27.56<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">2 lb<span class="m">900 g</span></span><span class="it">Yellow onions, thinly sliced</span><span class="pr" title="EST: $1.49 per lb">$2.98<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 slices</span><span class="it">Brown or white sandwich bread</span><span class="pr" title="BLS: $1.83 per lb">$0.23<span class="badge b-bls">BLS</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">2 × 11.2 oz bottles<span class="m">660 ml</span></span><span class="it">Belgian dubbel</span><span class="pr" title="EST: $3.50 per 11.2 oz bottle (4-pack ~$14)">$7.00<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 tbsp<span class="m">30 g</span></span><span class="it">Butter</span><span class="pr" title="EST: $4.99 per lb">$0.31<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">15 ml</span></span><span class="it">Neutral oil</span><span class="pr" title="EST: $6.99 per 48 oz bottle">$0.07<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 tbsp<span class="m">16 g</span></span><span class="it">Plain (all-purpose) flour</span><span class="pr" title="BLS: $0.55 per lb">$0.02<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">3 tbsp<span class="m">45 g</span></span><span class="it">Dijon mustard</span><span class="pr" title="EST: $2.99 per 8 oz jar">$0.56<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">12 g</span></span><span class="it">Dark brown sugar</span><span class="pr" title="EST: $1.60 per lb">$0.05<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">15 ml</span></span><span class="it">Red wine or cider vinegar</span><span class="pr" title="EST: $2.99 per 12 oz bottle">$0.12<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2</span><span class="it">Bay leaves</span><span class="pr" title="EST: $3.99 per jar of ~25 leaves">$0.32<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tsp<span class="m">1 g</span></span><span class="it">Dried thyme</span><span class="pr" title="EST: $3.99 per 0.75 oz jar">$0.19<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$39.41</span></div>
+        <div><span class="ck">Per head (6)</span><span class="cv">$6.57</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="belgium-method">
+      <h3 id="belgium-method">Method</h3>
+      <ol class="steps"><li>Pat the beef dry and season it well with salt and pepper. Heat the oil and 1 tbsp butter in the Dutch oven over medium-high heat.</li>
+<li>Brown the beef in three batches, 3–4 minutes a side, until each piece has a dark crust and lifts off the base without sticking. Crowding the pot makes it steam grey, so keep the batches small. Set the meat aside on a plate.</li>
+<li>Lower the heat to medium. Add the remaining butter, the onions and a pinch of salt. Cook for about 15 minutes, scraping up the browned bits, until the onions are soft and a deep golden brown.</li>
+<li>Stir in the flour and cook for 1 minute. Pour in the beer a little at a time, scraping the base as it foams. Add the sugar, vinegar, bay and thyme, then return the beef and its juices. The liquid should come most of the way up the meat; top up with a splash of water if it doesn't.</li>
+<li>Spread the mustard thickly over one side of each bread slice and lay them on the surface, mustard side down. Cover.</li>
+<li>Simmer on the lowest heat for about 2½ hours, or move the pot to a 300°F (150°C) oven. Stir every 40 minutes or so. The bread will collapse into the sauce. The beef is ready when a cube breaks apart under the side of a wooden spoon.</li>
+<li>Uncover and simmer for 10–15 minutes if the sauce is thin. It should coat the spoon and look glossy and mahogany. Taste and adjust with a little more vinegar or sugar.</li></ol>
+      <p class="serve"><b>Serve.</b> Fries are the Belgian standard, baked on the sheet tray while the stew finishes, with mayonnaise. Boiled potatoes work too.</p>
+    </section>
+    <section aria-labelledby="belgium-subs">
+      <h3 id="belgium-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>No dubbel</dt><dd>Any Belgian brown or a malty English brown ale works. The brown ale makes a drier, plainer stew and moves it towards an English braise.</dd></div>
+<div class="sub"><dt>No bread</dt><dd>Four speculoos biscuits (Lotus Biscoff in the US) are a recognised Flemish variant. The sauce turns sweeter and gently spiced.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>Use a non-alcoholic dark beer such as Guinness 0.0, with an extra teaspoon of vinegar. You keep the colour and some roast, but lose the dubbel's fruit. Stock alone makes a decent onion stew that no longer tastes Flemish.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="belgium-drink"><h3 id="belgium-drink">To drink with it</h3><p>The same dubbel. Chimay Première or Leffe Brune are the easy US options.</p></section>
+      <section aria-labelledby="belgium-left"><h3 id="belgium-left">Leftovers</h3><p>Better the next day. Keeps 4 days in the fridge and freezes well for 3 months.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 5%. Simmered and stirred for about 2½ hours (USDA code 5009). That is roughly 0.3 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="czechia" aria-labelledby="czechia-title" data-region="Europe" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Braising liquid"><span>BRAISE</span></div>
+  <p class="lab-top"><span class="lab-no">No. 02</span><span>Czechia</span><span class="lab-city">Prague</span></p>
+  <h2 class="lab-dish" id="czechia-title">Pivní guláš</h2>
+  <p class="lab-alt">beer goulash</p>
+  <p class="lab-local" lang="cs">Hovězí guláš na tmavém pivu · <span class="loc-note">Czech: beef goulash in dark beer</span></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">Czech dark lager</span>
+    <span class="sw" style="--c1:#B04500;--c2:#470606" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 17–35 · brown to black</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>30 min</dd></div>
+    <div><dt>Total</dt><dd>2 hr 45 min</dd></div>
+    <div><dt>Serves</dt><dd>6</dd></div>
+    <div><dt>Per head</dt><dd>$5.03</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Dutch oven</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weekend">Weekend</span><span>Beer role: Braising liquid</span><span>Alcohol retained: 10%</span></p>
+</div>
+<p class="standfirst">The Czech pub stew of beef, onion and paprika, deepened with a bottle of dark lager.</p>
+<div class="headnote"><p>Czech guláš descends from Hungarian gulyás, the herdsman's dish, but the two have parted ways. The Hungarian version is a soup-stew with potatoes cooked in the pot. The Czech one is a thick beef stew served alongside bread dumplings (knedlíky). In pubs it comes topped with slices of raw onion, with a beer next to it, and beer can also go into the pot.<sup class="cite"><a href="#src-19" aria-label="Source 19">19</a></sup> Czech newspaper food pages treat dark-beer goulash as a named variant with its own recipes.<sup class="cite"><a href="#src-20" aria-label="Source 20">20</a></sup> That makes the beer common but optional here, and the book marks it as contested.</p>
+<p>The country gave the world its first pale lager. Josef Groll, a Bavarian brewer hired by the burghers of Plzeň, served the first batch of what became Pilsner Urquell on 11 November 1842.<sup class="cite"><a href="#src-21" aria-label="Source 21">21</a></sup> Czechs still drink more beer per head than anyone else: 148.8 litres in 2024, the 32nd year in a row at the top of Kirin's world ranking.<sup class="cite"><a href="#src-22" aria-label="Source 22">22</a></sup> The beer in this pot is the other Czech tradition, the dark lager (tmavé pivo), which brings roast and caramel without much bitterness.</p>
+<p>Onion does most of the work. Czech cooks use close to the same weight of onion as beef, browned slowly until it melts into the sauce.</p>
+<p class="checked"><b>Checked.</b> The pub serving with raw onion and beer, and beer as an optional addition, are both confirmed. The Pilsner and consumption figures are sourced. Beer in the pot is marked as contested.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="czechia-beer">
+      <h3 id="czechia-beer">The beer</h3>
+      <p>Czech dark lager (SRM 17–35, IBU 18–34) adds colour and caramel malt with moderate bitterness.<sup class="cite"><a href="#src-9" aria-label="Source 9">9</a></sup> One bottle is enough; the dish does not need more.</p>
+      <p><b>On the shelf.</b> Kozel Dark turns up in some US beer aisles. Shiner Bock is the widely stocked fallback, and any Munich dunkel works.</p>
+      <p><b>Avoid.</b> Hoppy beers, including a Czech pale lager in quantity. Czech premium pale lagers run to 30–45 IBU and turn harsh over two hours.<sup class="cite"><a href="#src-9" aria-label="Source 9">9</a></sup></p>
+    </section>
+    <section aria-labelledby="czechia-shop">
+      <h3 id="czechia-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">2½ lb<span class="m">1.13 kg</span></span><span class="it">Beef chuck or shin, in 1½-inch (4 cm) cubes</span><span class="pr" title="BLS: $9.19 per lb">$22.96<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">1½ lb<span class="m">680 g</span></span><span class="it">Yellow onions, finely chopped</span><span class="pr" title="EST: $1.49 per lb">$2.23<span class="badge b-est">EST</span></span></li>
+<li><span class="q">4 cloves</span><span class="it">Garlic, crushed</span><span class="pr" title="EST: $0.69 per head">$0.28<span class="badge b-est">EST</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">12 oz bottle<span class="m">355 ml</span></span><span class="it">Czech dark lager</span><span class="pr" title="EST: $1.83 per 12 oz bottle (6-pack ~$11)">$1.83<span class="badge b-est">EST</span></span></li>
+<li><span class="q">3 tbsp<span class="m">45 ml</span></span><span class="it">Neutral oil (or lard)</span><span class="pr" title="EST: $6.99 per 48 oz bottle">$0.22<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 tbsp<span class="m">14 g</span></span><span class="it">Sweet paprika</span><span class="pr" title="EST: $3.99 per 2.6 oz jar">$0.76<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">16 g</span></span><span class="it">Tomato paste (purée)</span><span class="pr" title="EST: $1.29 per 6 oz can">$0.11<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 cups<span class="m">475 ml</span></span><span class="it">Beef stock (broth)</span><span class="pr" title="EST: $3.29 per 32 oz carton">$1.65<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">8 g</span></span><span class="it">Plain (all-purpose) flour</span><span class="pr" title="BLS: $0.55 per lb">$0.01<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">½ tsp<span class="m">1 g</span></span><span class="it">Caraway seeds, crushed (optional)</span><span class="pr" title="EST: $4.99 per 1.6 oz jar">$0.11<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$30.16</span></div>
+        <div><span class="ck">Per head (6)</span><span class="cv">$5.03</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="czechia-method">
+      <h3 id="czechia-method">Method</h3>
+      <ol class="steps"><li>Heat the oil in the Dutch oven over medium heat. Add the onions and a pinch of salt and cook for about 20 minutes, stirring often, until they are dark gold and jammy. This is the step that makes the goulash, so give it the full time.</li>
+<li>Turn the heat to medium-high, add the beef and cook for 8–10 minutes, turning, until the outside of the cubes has lost all its pink and is browning in places.</li>
+<li>Take the pot off the heat and stir in the paprika. Paprika burns quickly and turns bitter, so do this away from the flame. Add the tomato paste, garlic and caraway, if using, and stir for 30 seconds.</li>
+<li>Return to the heat, pour in the beer and let it bubble for 2 minutes, scraping the base. Add stock until the meat is just covered.</li>
+<li>Cover and simmer gently for 2 hours, stirring now and then and adding a splash of water if the level drops below the meat. It's ready when the beef is tender enough to cut with a spoon.</li>
+<li>Whisk the flour with 3 tbsp of the cooking liquid, stir it back in and simmer uncovered for 10 minutes until the sauce is thick enough to coat a spoon. Season with salt.</li></ol>
+      <p class="serve"><b>Serve.</b> With crusty bread or boiled potatoes, and a few rings of raw onion on top, as in a Czech pub. Shop-bought knedlíky are not sold in US supermarkets, and bread is the honest substitute.</p>
+    </section>
+    <section aria-labelledby="czechia-subs">
+      <h3 id="czechia-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>No caraway</dt><dd>Leave it out. Caraway is the classic Czech seasoning, so you lose a little character, but the dish holds without it. Marjoram is the other traditional herb; dried thyme is the closest pantry swap.</dd></div>
+<div class="sub"><dt>No dark lager</dt><dd>An English brown ale is the closest. A pale lager gives a lighter, plainer stew.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>Use stock in place of the beer, and stir in a teaspoon of brown sugar. Since the beer is already optional in Czech cooking, this costs the dish less than anywhere else in the book. Half a bottle of Malta Goya, a non-alcoholic malt drink sold in the soft-drinks aisle, puts back some malt but makes it sweeter.<sup class="cite"><a href="#src-5" aria-label="Source 5">5</a></sup></dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="czechia-drink"><h3 id="czechia-drink">To drink with it</h3><p>Pilsner Urquell, which is widely sold in the US.</p></section>
+      <section aria-labelledby="czechia-left"><h3 id="czechia-left">Leftovers</h3><p>Keeps 4 days in the fridge and tastes better on day two. Freezes for 3 months.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 10%. Simmered and stirred for about 2 hours (USDA code 5008). That is roughly 0.2 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="england" aria-labelledby="england-title" data-region="Europe" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Braising liquid"><span>BRAISE</span></div>
+  <p class="lab-top"><span class="lab-no">No. 03</span><span>England</span><span class="lab-city">London</span></p>
+  <h2 class="lab-dish" id="england-title">Steak and ale pie</h2>
+  
+  <p class="lab-local" lang="en"></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">English brown ale</span>
+    <span class="sw" style="--c1:#CF6900;--c2:#8E2900" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 12–22 · amber to dark brown</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>40 min</dd></div>
+    <div><dt>Total</dt><dd>3 hr 15 min</dd></div>
+    <div><dt>Serves</dt><dd>6</dd></div>
+    <div><dt>Per head</dt><dd>$5.89</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Dutch oven, then baking dish</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weekend">Weekend</span><span>Beer role: Braising liquid</span><span>Alcohol retained: 5–10%</span></p>
+</div>
+<p class="standfirst">Beef braised in brown ale under a puff-pastry lid, the pub pie of England.</p>
+<div class="headnote"><p>The steak pie is a British standard: stewing steak and gravy in pastry. Steak and ale is the pub version, using one of many ales as the braising liquid; in Ireland the same idea with stout and bacon is called steak and Guinness pie.<sup class="cite"><a href="#src-23" aria-label="Source 23">23</a></sup> It is pub food in the plainest sense, served with mash or chips and peas.</p>
+<p>Ale here is the cooking liquid and becomes the gravy. Claims that the pie descends directly from medieval recipes of beef in ale baked in pastry are common online, but the versions I found paraphrase old sources loosely and I could not verify them. I also found no reliable date for when steak and ale became a named pie. Treat both as unproven.</p>
+<p>What is documented is the pub culture around it. The Campaign for Real Ale was founded in 1971 to fight the spread of mass-produced keg beer and the loss of local brewing, and it now lists about 4,500 real-ale outlets in its Good Beer Guide.<sup class="cite"><a href="#src-24" aria-label="Source 24">24</a></sup></p>
+<p class="checked"><b>Checked.</b> The dish and its Irish stout cousin are confirmed. Medieval ancestry and any naming date are unverified and left out.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="england-beer">
+      <h3 id="england-beer">The beer</h3>
+      <p>English brown ale (SRM 12–22, IBU 20–30) is nutty and malty, with enough bitterness to cut the richness but not enough to turn harsh.<sup class="cite"><a href="#src-11" aria-label="Source 11">11</a></sup></p>
+      <p><b>On the shelf.</b> Samuel Smith's Nut Brown Ale is often stocked; Fuller's London Pride, a bitter, also works well.</p>
+      <p><b>Avoid.</b> IPAs. Their 40–70 IBU concentrates in a reduced gravy and tastes medicinal.<sup class="cite"><a href="#src-13" aria-label="Source 13">13</a></sup></p>
+    </section>
+    <section aria-labelledby="england-shop">
+      <h3 id="england-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">2½ lb<span class="m">1.13 kg</span></span><span class="it">Beef chuck, in 1½-inch (4 cm) cubes</span><span class="pr" title="BLS: $9.19 per lb">$22.96<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">2 medium<span class="m">300 g</span></span><span class="it">Yellow onions, chopped</span><span class="pr" title="EST: $1.49 per lb">$0.98<span class="badge b-est">EST</span></span></li>
+<li><span class="q">8 oz<span class="m">225 g</span></span><span class="it">Cremini mushrooms, quartered</span><span class="pr" title="EST: $2.79 per 8 oz pack">$2.79<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1</span><span class="it">Egg, beaten, for glazing</span><span class="pr" title="BLS: $2.27 per dozen">$0.19<span class="badge b-bls">BLS</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">1½ × 12 oz bottles<span class="m">530 ml</span></span><span class="it">English brown ale</span><span class="pr" title="EST: $2.17 per 12 oz bottle (6-pack ~$13)">$3.25<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 sheet<span class="m">245 g</span></span><span class="it">Frozen puff pastry, thawed</span><span class="pr" title="EST: $6.49 per 2-sheet box">$3.25<span class="badge b-est">EST</span></span></li>
+<li><span class="q">3 tbsp<span class="m">24 g</span></span><span class="it">Plain (all-purpose) flour</span><span class="pr" title="BLS: $0.55 per lb">$0.03<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">2 tbsp<span class="m">30 ml</span></span><span class="it">Neutral oil</span><span class="pr" title="EST: $6.99 per 48 oz bottle">$0.15<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">15 g</span></span><span class="it">Butter</span><span class="pr" title="EST: $4.99 per lb">$0.15<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 cup<span class="m">240 ml</span></span><span class="it">Beef stock (broth)</span><span class="pr" title="EST: $3.29 per 32 oz carton">$0.82<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">16 g</span></span><span class="it">Tomato paste (purée)</span><span class="pr" title="EST: $1.29 per 6 oz can">$0.11<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">15 ml</span></span><span class="it">Worcestershire sauce</span><span class="pr" title="EST: $3.49 per 10 oz bottle">$0.17<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tsp<span class="m">1 g</span></span><span class="it">Dried thyme</span><span class="pr" title="EST: $3.99 per 0.75 oz jar">$0.19<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2</span><span class="it">Bay leaves</span><span class="pr" title="EST: $3.99 per jar of ~25 leaves">$0.32<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$35.36</span></div>
+        <div><span class="ck">Per head (6)</span><span class="cv">$5.89</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="england-method">
+      <h3 id="england-method">Method</h3>
+      <ol class="steps"><li>Toss the beef with the flour and a good pinch of salt and pepper. Heat the oil in the Dutch oven over medium-high heat and brown the beef in three batches until crusted, 5–6 minutes per batch. Set aside.</li>
+<li>Lower the heat to medium, add the butter, onions and mushrooms and cook for 8 minutes, until the mushrooms have given up their liquid and are browning.</li>
+<li>Stir in the tomato paste for 1 minute. Pour in the ale, scraping the base, then add the stock, Worcestershire, thyme, bay and the beef with its juices.</li>
+<li>Cover and simmer gently for 2 hours, stirring occasionally, until the beef is tender and the gravy is thick enough to coat the spoon. If it is thin, simmer uncovered for 10–15 minutes.</li>
+<li>Cool the filling for at least 30 minutes. A hot filling melts the pastry before it can rise. Heat the oven to 400°F (200°C).</li>
+<li>Spoon the filling into the baking dish. Unfold the pastry, roll it slightly so it overhangs the rim by about ½ inch (1 cm), lay it over, press the edges onto the rim and cut two slits in the middle for steam. Brush with egg.</li>
+<li>Set the dish on the sheet tray to catch drips and bake for 30–35 minutes, until the pastry is puffed and deep golden and the gravy bubbles at the edges. Rest 5 minutes before serving.</li></ol>
+      <p class="serve"><b>Serve.</b> Mashed potatoes and peas.</p>
+    </section>
+    <section aria-labelledby="england-subs">
+      <h3 id="england-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>No brown ale</dt><dd>A bitter or an amber ale. A stout gives a darker, more bitter gravy and turns it into the Irish steak and Guinness pie.</dd></div>
+<div class="sub"><dt>No mushrooms</dt><dd>Leave them out, or use a chopped carrot. The gravy is a little less savoury.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>Use a non-alcoholic dark or amber beer and add a teaspoon of brown sugar. All-stock gravy works and tastes like a steak pie, though no longer a steak and ale pie.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="england-drink"><h3 id="england-drink">To drink with it</h3><p>An English bitter, such as Fuller's London Pride, or the same brown ale.</p></section>
+      <section aria-labelledby="england-left"><h3 id="england-left">Leftovers</h3><p>The filling keeps 3 days and freezes for 3 months, so you can make it ahead. Leftover baked pie reheats in the oven; the pastry softens.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 5–10%. Filling simmered about 2 hours (USDA code 5008), then baked under pastry. That is roughly 0.2–0.3 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="ireland" aria-labelledby="ireland-title" data-region="Europe" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Braising liquid"><span>BRAISE</span></div>
+  <p class="lab-top"><span class="lab-no">No. 04</span><span>Ireland</span><span class="lab-city">Dublin</span></p>
+  <h2 class="lab-dish" id="ireland-title">Beef and stout stew</h2>
+  
+  <p class="lab-local" lang="en">Beef and Guinness stew</p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">Irish dry stout</span>
+    <span class="sw" style="--c1:#7B1A00;--c2:#36080A" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 25–40 · dark brown to black</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>30 min</dd></div>
+    <div><dt>Total</dt><dd>2 hr 45 min</dd></div>
+    <div><dt>Serves</dt><dd>6</dd></div>
+    <div><dt>Per head</dt><dd>$5.47</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Dutch oven</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weekend">Weekend</span><span>Beer role: Braising liquid</span><span>Alcohol retained: 10%</span></p>
+</div>
+<p class="standfirst">The Irish pub stew of beef, root vegetables and a can of dry stout.</p>
+<div class="headnote"><p>Irish stew in its traditional form is lamb or mutton with root vegetables, and purists allow only neck chops of mutton, or kid.<sup class="cite"><a href="#src-25" aria-label="Source 25">25</a></sup> The first published Irish stew recipe, in Cassell's Dictionary of Cookery in 1874, used mutton.<sup class="cite"><a href="#src-26" aria-label="Source 26">26</a></sup> Beef and stout is a different dish, and its history is contested. Nobody I could find has traced when stout went into the pot, though most Irish pubs now serve both versions.<sup class="cite"><a href="#src-26" aria-label="Source 26">26</a></sup> It is in this book as the dish most people mean by a Guinness stew, with that caveat attached.</p>
+<p>The stout is the reason it exists. Arthur Guinness took the lease on the brewery at St James's Gate in Dublin in 1759. Roasting part of the barley gives the beer its colour and dry, roasted flavour, and since 1959 the draught version has used nitrogen for its creamy texture.<sup class="cite"><a href="#src-27" aria-label="Source 27">27</a></sup> Ireland ranks fourth in the world for beer drunk per head.<sup class="cite"><a href="#src-22" aria-label="Source 22">22</a></sup></p>
+<p>Roasted grain brings bitterness, so the recipe balances it with tomato paste and a pinch of sugar, and keeps the reduction gentle.</p>
+<p class="checked"><b>Checked.</b> Lamb or mutton as the traditional meat and the 1874 mutton recipe are confirmed. The origin of beef with stout is unknown and is marked as contested.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="ireland-beer">
+      <h3 id="ireland-beer">The beer</h3>
+      <p>Irish dry stout (SRM 25–40, IBU 25–45) gives colour and a roasted, coffee-like depth.<sup class="cite"><a href="#src-12" aria-label="Source 12">12</a></sup> It is more bitter than the other braising beers in this book, so use one can and no more.</p>
+      <p><b>On the shelf.</b> Guinness Draught in the nitro can is in almost every US beer aisle.</p>
+      <p><b>Avoid.</b> Imperial, coffee and dessert stouts, which are strong and sweet and take over the pot. Guinness Foreign Extra is noticeably more bitter than Draught.</p>
+    </section>
+    <section aria-labelledby="ireland-shop">
+      <h3 id="ireland-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">2½ lb<span class="m">1.13 kg</span></span><span class="it">Beef chuck, in 1½-inch (4 cm) cubes</span><span class="pr" title="BLS: $9.19 per lb">$22.96<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">2 medium<span class="m">300 g</span></span><span class="it">Yellow onions, chopped</span><span class="pr" title="EST: $1.49 per lb">$0.98<span class="badge b-est">EST</span></span></li>
+<li><span class="q">4<span class="m">450 g</span></span><span class="it">Carrots, in thick rounds</span><span class="pr" title="EST: $1.29 per lb">$1.29<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 stalks<span class="m">100 g</span></span><span class="it">Celery, sliced</span><span class="pr" title="EST: $2.49 per bunch">$0.62<span class="badge b-est">EST</span></span></li>
+<li><span class="q">3 cloves</span><span class="it">Garlic, chopped</span><span class="pr" title="EST: $0.69 per head">$0.21<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1½ lb<span class="m">680 g</span></span><span class="it">Yukon Gold or other waxy potatoes, in chunks</span><span class="pr" title="BLS: $0.99 per lb">$1.48<span class="badge b-bls">BLS</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">14.9 oz can<span class="m">440 ml</span></span><span class="it">Guinness Draught or other dry stout</span><span class="pr" title="EST: $2.75 per 14.9 oz can (4-pack ~$11)">$2.75<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 tbsp<span class="m">16 g</span></span><span class="it">Plain (all-purpose) flour</span><span class="pr" title="BLS: $0.55 per lb">$0.02<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">2 tbsp<span class="m">30 ml</span></span><span class="it">Neutral oil</span><span class="pr" title="EST: $6.99 per 48 oz bottle">$0.15<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 tbsp<span class="m">32 g</span></span><span class="it">Tomato paste (purée)</span><span class="pr" title="EST: $1.29 per 6 oz can">$0.21<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 cups<span class="m">475 ml</span></span><span class="it">Beef stock (broth)</span><span class="pr" title="EST: $3.29 per 32 oz carton">$1.65<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tsp<span class="m">4 g</span></span><span class="it">Sugar</span><span class="pr" title="BLS: $1.02 per lb">$0.01<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">1 tsp<span class="m">1 g</span></span><span class="it">Dried thyme</span><span class="pr" title="EST: $3.99 per 0.75 oz jar">$0.19<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2</span><span class="it">Bay leaves</span><span class="pr" title="EST: $3.99 per jar of ~25 leaves">$0.32<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$32.84</span></div>
+        <div><span class="ck">Per head (6)</span><span class="cv">$5.47</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="ireland-method">
+      <h3 id="ireland-method">Method</h3>
+      <ol class="steps"><li>Toss the beef in the flour with salt and pepper. Heat the oil in the Dutch oven over medium-high heat and brown the beef in three batches until crusted, 5–6 minutes each. Set aside.</li>
+<li>Lower the heat to medium. Add the onions, celery and garlic and cook for 6–8 minutes until soft. Stir in the tomato paste and cook for 1 minute, until it darkens to brick red.</li>
+<li>Pour in the stout, scraping the base; it will foam. Add the stock, sugar, thyme, bay and the beef with its juices.</li>
+<li>Cover and simmer gently for 1 hour.</li>
+<li>Add the carrots and potatoes, pushing them under the liquid. Cover and simmer for another hour, until the beef is tender and a knife slides through the potatoes.</li>
+<li>Uncover for the last 10 minutes if the gravy needs thickening. Season to taste. Some of the potato will break down and thicken it, which is how it should be.</li></ol>
+      <p class="serve"><b>Serve.</b> With buttered bread. The potatoes are already in the pot.</p>
+    </section>
+    <section aria-labelledby="ireland-subs">
+      <h3 id="ireland-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>Lamb instead</dt><dd>Use 2½ lb lamb shoulder and leave out the stout and tomato, using stock alone. That gives you the traditional Irish stew, which is a different dish.</dd></div>
+<div class="sub"><dt>No stout</dt><dd>A porter is the closest. A brown ale gives a sweeter, lighter stew.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>Guinness 0.0 is the obvious swap and keeps most of the character. Stock alone makes a good beef stew that loses the roasted edge.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="ireland-drink"><h3 id="ireland-drink">To drink with it</h3><p>Guinness, or Smithwick's red ale.</p></section>
+      <section aria-labelledby="ireland-left"><h3 id="ireland-left">Leftovers</h3><p>Keeps 4 days. It freezes, but the potatoes turn grainy; to freeze a batch, leave them out and add them when you reheat.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 10%. Simmered and stirred for about 2 hours (USDA code 5008). That is roughly 0.2 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="germany" aria-labelledby="germany-title" data-region="Europe" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Basting and gravy"><span>ROAST</span></div>
+  <p class="lab-top"><span class="lab-no">No. 05</span><span>Germany</span><span class="lab-city">Munich</span></p>
+  <h2 class="lab-dish" id="germany-title">Schweinsbraten</h2>
+  <p class="lab-alt">Bavarian roast pork</p>
+  <p class="lab-local" lang="de">Bayerischer Schweinsbraten · <span class="loc-note">Bavarian German</span></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">Munich dunkel</span>
+    <span class="sw" style="--c1:#B04500;--c2:#6A0E00" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 17–28 · brown to dark brown</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>20 min</dd></div>
+    <div><dt>Total</dt><dd>2 hr 30 min</dd></div>
+    <div><dt>Serves</dt><dd>6</dd></div>
+    <div><dt>Per head</dt><dd>$2.83</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Dutch oven, in the oven</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weekend">Weekend</span><span>Beer role: Basting and gravy</span><span>Alcohol retained: 20%</span></p>
+</div>
+<p class="standfirst">Bavaria's Sunday roast: pork shoulder roasted over dark beer that becomes the gravy.</p>
+<div class="headnote"><p>Schweinsbraten is the Bavarian Sunday roast, the dish families go out to a country inn for. Munich's tourist board publishes a family recipe. It roasts a whole pork shoulder and pours in dark beer (or wheat beer), sweet malt beer and water about 10 minutes after the meat goes into the oven. The roast is turned at that point, and the liquid becomes the sauce.<sup class="cite"><a href="#src-28" aria-label="Source 28">28</a></sup></p>
+<p>Dunkel, the dark lager of the Bavarian countryside, was the most common beer in the region when the Reinheitsgebot purity law was introduced in 1516.<sup class="cite"><a href="#src-29" aria-label="Source 29">29</a></sup> The beer here is part basting liquid and part gravy, with its malt reducing around the fat and juices.</p>
+<p>One honest gap: Bavarian shoulder is sold with its rind, which blisters into crackling (Kruste). US supermarket shoulder is almost always skinless, so this version gets a browned fat cap and no crackling. If you see a skin-on picnic shoulder, buy it and score the skin.</p>
+<p class="checked"><b>Checked.</b> The method follows the published Munich recipe. Its malt beer is left out as a single-use buy. The dunkel history is sourced.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="germany-beer">
+      <h3 id="germany-beer">The beer</h3>
+      <p>Munich dunkel (SRM 17–28, IBU 18–28) is smooth and malty and low in bitterness, so it reduces to a sweet, bready gravy.<sup class="cite"><a href="#src-10" aria-label="Source 10">10</a></sup></p>
+      <p><b>On the shelf.</b> Look for a Bavarian dunkel; several turn up in larger US beer aisles. Shiner Bock is the widely stocked fallback.</p>
+      <p><b>Avoid.</b> Hoppy pale beers and stouts. The Munich recipe pairs dark beer with sweet malt beer because a dark beer alone can make the sauce too bitter.<sup class="cite"><a href="#src-28" aria-label="Source 28">28</a></sup></p>
+    </section>
+    <section aria-labelledby="germany-shop">
+      <h3 id="germany-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">3 lb<span class="m">1.36 kg</span></span><span class="it">Boneless pork shoulder (Boston butt), fat cap on</span><span class="pr" title="EST: $3.49 per lb">$10.47<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 medium<span class="m">300 g</span></span><span class="it">Yellow onions, quartered</span><span class="pr" title="EST: $1.49 per lb">$0.98<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2<span class="m">300 g</span></span><span class="it">Carrots, in chunks</span><span class="pr" title="EST: $1.29 per lb">$0.85<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 stalk<span class="m">50 g</span></span><span class="it">Celery, in chunks</span><span class="pr" title="EST: $2.49 per bunch">$0.31<span class="badge b-est">EST</span></span></li>
+<li><span class="q">4 cloves</span><span class="it">Garlic, crushed</span><span class="pr" title="EST: $0.69 per head">$0.28<span class="badge b-est">EST</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">1½ × 12 oz bottles<span class="m">530 ml</span></span><span class="it">Munich dunkel or other dark lager</span><span class="pr" title="EST: $2.00 per 12 oz bottle (6-pack ~$12)">$3.00<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 cup<span class="m">240 ml</span></span><span class="it">Beef or chicken stock</span><span class="pr" title="EST: $3.29 per 32 oz carton">$0.82<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tsp<span class="m">2 g</span></span><span class="it">Caraway seeds (optional)</span><span class="pr" title="EST: $4.99 per 1.6 oz jar">$0.22<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">8 g</span></span><span class="it">Cornstarch (cornflour)</span><span class="pr" title="EST: $2.49 per 16 oz box">$0.05<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$16.98</span></div>
+        <div><span class="ck">Per head (6)</span><span class="cv">$2.83</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="germany-method">
+      <h3 id="germany-method">Method</h3>
+      <ol class="steps"><li>Heat the oven to 350°F (175°C). Score the fat cap in a crosshatch about ½ inch (1 cm) apart, cutting through the fat but not into the meat. Rub all over with 2 tsp salt, pepper, the garlic and the caraway, if using.</li>
+<li>Scatter the onions, carrots and celery in the Dutch oven. Set the pork on top, fat side up, and add ½ cup (120 ml) of water. Roast uncovered for 30 minutes.</li>
+<li>Pour in the beer and stock around the meat, never over the fat. Roast for about 1½ hours more, basting the sides with the pan juices every 20–30 minutes. Keep at least ½ inch (1 cm) of liquid in the pot, adding water if it runs low.</li>
+<li>The pork is done at about 185°F (85°C) in the thickest part, when it is tender but still slices. For a crisper top, turn on the broiler for the last 3–5 minutes and watch it closely.</li>
+<li>Lift the pork onto a board and rest it for 15 minutes.</li>
+<li>Set the pot on the stove. Press the vegetables into the juices with a potato masher, then strain, pressing hard. Skim off the excess fat, bring to a simmer and thicken with the cornstarch mixed into 2 tbsp cold water. Season.</li></ol>
+      <p class="serve"><b>Serve.</b> Boiled potatoes and sauerkraut or coleslaw. Bavarian inns serve it with potato or bread dumplings (Knödel).</p>
+    </section>
+    <section aria-labelledby="germany-subs">
+      <h3 id="germany-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>No caraway</dt><dd>Leave it out; Bavarian cooks rub it into the meat, but the roast is good without it.</dd></div>
+<div class="sub"><dt>No dunkel</dt><dd>Any dark lager or a bock. A wheat beer is the Munich recipe's own alternative and gives a lighter, fruitier gravy.<sup class="cite"><a href="#src-28" aria-label="Source 28">28</a></sup></dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>Malta Goya, sold in the soft-drinks aisle, is close to the sweet malt beer in the Munich recipe.<sup class="cite"><a href="#src-5" aria-label="Source 5">5</a></sup> Use one bottle with an equal amount of stock. The gravy comes out sweeter and keeps the malty character.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="germany-drink"><h3 id="germany-drink">To drink with it</h3><p>A Munich dunkel, or a Bavarian hefeweizen such as Paulaner.</p></section>
+      <section aria-labelledby="germany-left"><h3 id="germany-left">Leftovers</h3><p>Keep the slices in the gravy. They keep 4 days and freeze for 3 months. Cold slices make good sandwiches.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 20%. Poured into the pan and baked with basting for about 1½ hours (USDA code 5007). That is roughly 0.7 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="france" aria-labelledby="france-title" data-region="Europe" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Braising liquid"><span>BRAISE</span></div>
+  <p class="lab-top"><span class="lab-no">No. 06</span><span>France</span><span class="lab-city">Lille</span></p>
+  <h2 class="lab-dish" id="france-title">Coq à la bière</h2>
+  
+  <p class="lab-local" lang="fr"><span class="loc-note">French, Nord-Pas-de-Calais</span></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">Bière de garde or amber</span>
+    <span class="sw" style="--c1:#F8A600;--c2:#A13700" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 6–19 · gold to brown</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>20 min</dd></div>
+    <div><dt>Total</dt><dd>1 hr</dd></div>
+    <div><dt>Serves</dt><dd>4</dd></div>
+    <div><dt>Per head</dt><dd>$3.66</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Dutch oven</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weeknight">Weeknight</span><span>Beer role: Braising liquid</span><span>Alcohol retained: 35%</span></p>
+</div>
+<p class="standfirst">The north of France's answer to coq au vin, with chicken braised in farmhouse beer and finished with cream.</p>
+<div class="headnote"><p>Atout France, the national tourism agency, lists coq à la bière among the best-known dishes of Nord-Pas-de-Calais, next to carbonade flamande and Maroilles tart.<sup class="cite"><a href="#src-30" aria-label="Source 30">30</a></sup> The Routard guide calls it one of the great classics of the region, and sums up the north's cooking as beer in the north and cream and butter further south.<sup class="cite"><a href="#src-31" aria-label="Source 31">31</a></sup> This dish uses both.</p>
+<p>The name means rooster, which needs long cooking. Home cooks now use chicken, and thighs and legs keep this within an hour. The beer is the braising liquid, just as wine is in coq au vin.</p>
+<p>The region's own beer is bière de garde, meaning beer to keep. It began as a farmhouse beer of the Nord and Pas-de-Calais, brewed in early winter and cellared into spring, and comes in blonde, amber and brown.<sup class="cite"><a href="#src-32" aria-label="Source 32">32</a></sup> Some versions flame the chicken with genièvre, the local juniper spirit. That is a bottle you would buy once, so it is left out.</p>
+<p class="checked"><b>Checked.</b> The dish's regional standing is confirmed by two French tourism sources. No origin date is claimed.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="france-beer">
+      <h3 id="france-beer">The beer</h3>
+      <p>Bière de garde (SRM 6–19, IBU 18–28) is malt-forward with modest bitterness, so the sauce stays sweet and rounded.<sup class="cite"><a href="#src-15" aria-label="Source 15">15</a></sup></p>
+      <p><b>On the shelf.</b> True bières de garde are rare in US supermarkets. A Belgian blonde such as Leffe Blonde, or an amber lager such as Samuel Adams Boston Lager, is a fair stand-in.</p>
+      <p><b>Avoid.</b> IPAs and stouts. Stout turns the cream sauce grey and bitter.</p>
+    </section>
+    <section aria-labelledby="france-shop">
+      <h3 id="france-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">3 lb<span class="m">1.36 kg</span></span><span class="it">Bone-in chicken legs or thighs, skin on</span><span class="pr" title="BLS: $1.74 per lb">$5.22<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">4 oz<span class="m">115 g</span></span><span class="it">Thick-cut bacon, in short strips</span><span class="pr" title="BLS: $6.76 per lb">$1.69<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">3<span class="m">90 g</span></span><span class="it">Shallots, sliced (or 1 small onion)</span><span class="pr" title="EST: $3.99 per lb">$0.80<span class="badge b-est">EST</span></span></li>
+<li><span class="q">8 oz<span class="m">225 g</span></span><span class="it">White or cremini mushrooms, sliced</span><span class="pr" title="EST: $2.79 per 8 oz pack">$2.79<span class="badge b-est">EST</span></span></li>
+<li><span class="q">½ cup<span class="m">120 ml</span></span><span class="it">Heavy (double) cream</span><span class="pr" title="EST: $3.99 per pint">$1.00<span class="badge b-est">EST</span></span></li>
+<li><span class="q">small bunch</span><span class="it">Flat-leaf parsley, chopped</span><span class="pr" title="EST: $1.29 per bunch">$0.65<span class="badge b-est">EST</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">12 oz bottle<span class="m">355 ml</span></span><span class="it">Bière de garde or amber beer</span><span class="pr" title="EST: $2.00 per 12 oz bottle (6-pack ~$12)">$2.00<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">15 g</span></span><span class="it">Butter</span><span class="pr" title="EST: $4.99 per lb">$0.15<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">8 g</span></span><span class="it">Plain (all-purpose) flour</span><span class="pr" title="BLS: $0.55 per lb">$0.01<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">1 tsp<span class="m">1 g</span></span><span class="it">Dried thyme</span><span class="pr" title="EST: $3.99 per 0.75 oz jar">$0.19<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1</span><span class="it">Bay leaf</span><span class="pr" title="EST: $3.99 per jar of ~25 leaves">$0.16<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$14.65</span></div>
+        <div><span class="ck">Per head (4)</span><span class="cv">$3.66</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="france-method">
+      <h3 id="france-method">Method</h3>
+      <ol class="steps"><li>Season the chicken with salt and pepper. In the Dutch oven over medium heat, cook the bacon until the fat runs and the edges crisp, about 5 minutes. Lift it out.</li>
+<li>Raise the heat to medium-high. Brown the chicken skin side down in the bacon fat until deep golden, about 6 minutes, then turn and brown the other side for 2 minutes. Work in two batches. Set aside and pour off all but 1 tbsp of fat.</li>
+<li>Add the butter, shallots and mushrooms and cook for 5 minutes, until the mushrooms brown. Stir in the flour for 1 minute.</li>
+<li>Pour in the beer, scraping the base. Add the thyme and bay, then return the chicken, skin side up, and the bacon. The liquid should come about halfway up the chicken.</li>
+<li>Cover and simmer gently for 30 minutes, until the meat pulls easily from the bone and the juices run clear (165°F/74°C at the bone).</li>
+<li>Lift out the chicken. Boil the sauce for 3–4 minutes to reduce it by about a third, then stir in the cream and simmer for 1 minute until it coats a spoon. Season, return the chicken and scatter with parsley.</li></ol>
+      <p class="serve"><b>Serve.</b> Fries or boiled potatoes, and bread for the sauce.</p>
+    </section>
+    <section aria-labelledby="france-subs">
+      <h3 id="france-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>No cream</dt><dd>Leave it out and finish with an extra knob of butter. The sauce is thinner and closer to a beer jus.</dd></div>
+<div class="sub"><dt>No bière de garde</dt><dd>Leffe Blonde or another Belgian blonde gives a fruitier sauce; an amber lager makes it plainer and maltier.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>Use a non-alcoholic amber or pale beer. With chicken stock alone, you have a good chicken fricassee that no longer tastes of the north.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="france-drink"><h3 id="france-drink">To drink with it</h3><p>A bière de garde if you find one; otherwise Leffe Blonde.</p></section>
+      <section aria-labelledby="france-left"><h3 id="france-left">Leftovers</h3><p>Keeps 3 days. The cream sauce can split if frozen, so freeze it before you add the cream.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 35%. Simmered and stirred for about 35 minutes (USDA code 5005, 30 minutes). That is roughly 1.6 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="portugal" aria-labelledby="portugal-title" data-region="Europe" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="In the sauce"><span>SAUCE</span></div>
+  <p class="lab-top"><span class="lab-no">No. 07</span><span>Portugal</span><span class="lab-city">Porto</span></p>
+  <h2 class="lab-dish" id="portugal-title">Francesinha</h2>
+  
+  <p class="lab-local" lang="pt"><span class="loc-note">Portuguese: “little Frenchie”</span></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">Pale lager</span>
+    <span class="sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 2–6 · straw to gold</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>30 min</dd></div>
+    <div><dt>Total</dt><dd>50 min</dd></div>
+    <div><dt>Serves</dt><dd>4</dd></div>
+    <div><dt>Per head</dt><dd>$6.66</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Saucepan, skillet, then sheet tray under the broiler</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weeknight">Weeknight</span><span>Beer role: In the sauce</span><span>Alcohol retained: 40%</span></p>
+</div>
+<p class="standfirst">Porto's meat-stacked sandwich under melted cheese, drowned in a hot sauce of tomato and beer.</p>
+<div class="headnote"><p>The francesinha is a 20th-century creation from Porto. It is attributed to Daniel David da Silva, who had lived in France and Belgium and is said to have adapted the croque-monsieur for Portuguese tastes at A Regaleira on Rua do Bonjardim in 1953.<sup class="cite"><a href="#src-33" aria-label="Source 33">33</a></sup> Portuguese press repeats the story, and calls the explanation of the name, that Frenchwomen were the spiciest women he knew, a legend.<sup class="cite"><a href="#src-34" aria-label="Source 34">34</a></sup> Treat the attribution as plausible and unproven.</p>
+<p>Every café in Porto has its own sauce, but beer is the one ingredient they all share.<sup class="cite"><a href="#src-33" aria-label="Source 33">33</a></sup> The sauce is tomato and beer, simmered with chilli and thickened, and poured near-boiling over a sandwich of steak, ham and sausage so it melts the cheese on top. One Portuguese recipe adds port, brandy and white wine as well.<sup class="cite"><a href="#src-34" aria-label="Source 34">34</a></sup> This version uses beer alone, which keeps it to one bottle you already have; the sauce loses a little sweetness and depth.</p>
+<p>Super Bock, launched in 1927 and brewed at Leça do Balio, is the beer of the north, and of the francesinha.<sup class="cite"><a href="#src-35" aria-label="Source 35">35</a></sup></p>
+<p class="checked"><b>Checked.</b> The attribution to Daniel da Silva in 1953 is widely repeated and undocumented, so it is flagged. Beer as the one constant in the sauce is confirmed.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="portugal-beer">
+      <h3 id="portugal-beer">The beer</h3>
+      <p>A pale lager (SRM 2–6, IBU 18–25) gives the sauce a clean, bready lift without darkening its colour.<sup class="cite"><a href="#src-8" aria-label="Source 8">8</a></sup></p>
+      <p><b>On the shelf.</b> Super Bock and Sagres turn up in some US stores. Otherwise use any European-style lager, such as Heineken or Stella Artois.</p>
+      <p><b>Avoid.</b> Dark beers, which muddy the colour, and IPAs, which make a bitter sauce.</p>
+    </section>
+    <section aria-labelledby="portugal-shop">
+      <h3 id="portugal-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">8 thick slices</span><span class="it">White sandwich bread</span><span class="pr" title="BLS: $1.83 per lb">$1.37<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">12 oz<span class="m">340 g</span></span><span class="it">Thin-cut beef steak (minute steak or round)</span><span class="pr" title="BLS: $9.84 per lb">$7.38<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">8 oz<span class="m">225 g</span></span><span class="it">Sliced deli ham</span><span class="pr" title="BLS: $5.45 per lb">$2.73<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">8 oz<span class="m">225 g</span></span><span class="it">Smoked sausage, such as kielbasa or linguiça, halved lengthways</span><span class="pr" title="EST: $4.99 per 13 oz pack">$3.07<span class="badge b-est">EST</span></span></li>
+<li><span class="q">12 slices</span><span class="it">Mild melting cheese (Muenster or provolone)</span><span class="pr" title="EST: $3.99 per 8 oz pack">$5.99<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 medium<span class="m">150 g</span></span><span class="it">Yellow onion, chopped</span><span class="pr" title="EST: $1.49 per lb">$0.49<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 cloves</span><span class="it">Garlic, chopped</span><span class="pr" title="EST: $0.69 per head">$0.14<span class="badge b-est">EST</span></span></li>
+<li><span class="q">4 (optional)<span class="m">4</span></span><span class="it">Eggs, fried, for the top</span><span class="pr" title="BLS: $2.27 per dozen">$0.76<span class="badge b-bls">BLS</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">12 oz bottle<span class="m">355 ml</span></span><span class="it">Pale lager</span><span class="pr" title="EST: $1.83 per 12 oz bottle (6-pack ~$11)">$1.83<span class="badge b-est">EST</span></span></li>
+<li><span class="q">14.5 oz can<span class="m">411 g</span></span><span class="it">Crushed tomatoes</span><span class="pr" title="EST: $1.79 per 14.5 oz can">$1.79<span class="badge b-est">EST</span></span></li>
+<li><span class="q">½ cup<span class="m">120 ml</span></span><span class="it">Beef stock (broth)</span><span class="pr" title="EST: $3.29 per 32 oz carton">$0.41<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tsp<span class="m">2 g</span></span><span class="it">Sweet paprika</span><span class="pr" title="EST: $3.99 per 2.6 oz jar">$0.13<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tsp<span class="m">5 ml</span></span><span class="it">Hot sauce or piri-piri, to taste</span><span class="pr" title="EST: $3.49 per 5 oz bottle">$0.12<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tsp<span class="m">5 ml</span></span><span class="it">Worcestershire sauce</span><span class="pr" title="EST: $3.49 per 10 oz bottle">$0.06<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tbsp<span class="m">8 g</span></span><span class="it">Cornstarch (cornflour), with 2 tbsp milk</span><span class="pr" title="EST: $2.49 per 16 oz box">$0.05<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 tbsp<span class="m">30 ml</span></span><span class="it">Milk</span><span class="pr" title="BLS: $4.11 per gallon">$0.03<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">1 tbsp<span class="m">15 g</span></span><span class="it">Butter</span><span class="pr" title="EST: $4.99 per lb">$0.15<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1</span><span class="it">Bay leaf</span><span class="pr" title="EST: $3.99 per jar of ~25 leaves">$0.16<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$26.65</span></div>
+        <div><span class="ck">Per head (4)</span><span class="cv">$6.66</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="portugal-method">
+      <h3 id="portugal-method">Method</h3>
+      <ol class="steps"><li>Make the sauce. In the saucepan over medium heat, melt the butter and soften the onion and garlic for 5 minutes. Add the tomatoes, beer, stock, paprika, bay, Worcestershire and hot sauce. Simmer for 20 minutes, stirring now and then, while you cook the meat.</li>
+<li>Season the steaks and sear them in the hot skillet with a film of oil, 1 minute a side. Lift out. Fry the sausage halves cut side down until browned, about 4 minutes.</li>
+<li>Heat the broiler with a rack about 6 inches (15 cm) below it. Build four sandwiches on the sheet tray: bread, ham, steak, sausage, more ham, then bread. Lay three cheese slices over each so they hang down the sides.</li>
+<li>Remove the bay leaf and blend the sauce smooth with a stick blender, or leave it rough. Stir in the cornstarch mixed with the milk and simmer for 2 minutes until it coats a spoon. Taste for heat and salt.</li>
+<li>Broil the sandwiches for 2–4 minutes, until the cheese has melted down the sides and is bubbling in spots. Watch them: broilers vary.</li>
+<li>Move each sandwich to a deep plate, top with a fried egg if you like, and ladle plenty of hot sauce over and around.</li></ol>
+      <p class="serve"><b>Serve.</b> With fries, which are standard in Porto, to drag through the sauce.</p>
+    </section>
+    <section aria-labelledby="portugal-subs">
+      <h3 id="portugal-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>Port and brandy</dt><dd>If you have them, add 2 tbsp port and 1 tbsp brandy with the beer. The sauce becomes sweeter and closer to a Porto café's.</dd></div>
+<div class="sub"><dt>No smoked sausage</dt><dd>Use two hot dogs (franks), split. It is plainer, and close to what many cafés use.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>A non-alcoholic lager works almost perfectly here, since the sauce is so heavily seasoned. Stock alone gives a tomato gravy that tastes much less like a francesinha.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="portugal-drink"><h3 id="portugal-drink">To drink with it</h3><p>Super Bock if you find it; otherwise any crisp pale lager.</p></section>
+      <section aria-labelledby="portugal-left"><h3 id="portugal-left">Leftovers</h3><p>The sauce keeps 4 days and freezes well, so make a double batch. The assembled sandwich does not keep.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 40%. Sauce simmered and stirred for about 20 minutes (USDA code 5004, 15 minutes). That is roughly 1.4 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="usa" aria-labelledby="usa-title" data-region="Americas" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Poaching liquid"><span>POACH</span></div>
+  <p class="lab-top"><span class="lab-no">No. 08</span><span>United States</span><span class="lab-city">Sheboygan, Wisconsin</span></p>
+  <h2 class="lab-dish" id="usa-title">Beer brats</h2>
+  <p class="lab-alt">Sheboygan style</p>
+  <p class="lab-local" lang="en"></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">American lager</span>
+    <span class="sw" style="--c1:#FFD878;--c2:#FFBF42" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 2–3.5 · straw</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>10 min</dd></div>
+    <div><dt>Total</dt><dd>35 min</dd></div>
+    <div><dt>Serves</dt><dd>5</dd></div>
+    <div><dt>Per head</dt><dd>$3.14</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Skillet, then sheet tray under the broiler</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weeknight">Weeknight</span><span>Beer role: Poaching liquid</span><span>Alcohol retained: 40–85%</span></p>
+</div>
+<p class="standfirst">Bratwurst poached in lager with onions, browned and served on a roll the Wisconsin way.</p>
+<div class="headnote"><p>Wisconsin's beer brat is a German sausage given an American method. Brats were made by hand in Sheboygan County butcher shops and became popular there in the 1920s. Milwaukee County Stadium started selling them in 1954, after the Braves moved to the city.<sup class="cite"><a href="#src-37" aria-label="Source 37">37</a></sup> The Sheboygan Press reported a bank's officers enjoying a “bratwurst” by the Black River as early as 1913.<sup class="cite"><a href="#src-39" aria-label="Source 39">39</a></sup> In 1970 a local judge named Sheboygan the Bratwurst Capital of the World, after a contest with Bucyrus, Ohio.<sup class="cite"><a href="#src-38" aria-label="Source 38">38</a></sup></p>
+<p>The beer came from Milwaukee. Brewers who left Germany after the revolutions of 1848–49 built the city's industry. Jacob Best's 1844 brewery became Pabst, August Krug's became Schlitz, and Frederick Miller founded the Plank Road Brewery in 1855. By 1874 Pabst was the largest brewer in the country.<sup class="cite"><a href="#src-36" aria-label="Source 36">36</a></sup> Simmering the brats in beer before they go on the grill is the Wisconsin step: it cooks them through, flavours them, and leaves a pan of soft beer onions for the topping.<sup class="cite"><a href="#src-37" aria-label="Source 37">37</a></sup></p>
+<p>The original finish is a charcoal grill. With no grill, the broiler is the stand-in. It blisters the casings well but gives no smoke.</p>
+<p class="checked"><b>Checked.</b> The 1920s, 1954 and 1970 dates are sourced, as is the 1913 newspaper mention. No one is credited with inventing the beer bath.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="usa-beer">
+      <h3 id="usa-beer">The beer</h3>
+      <p>American lager (SRM 2–3.5, IBU 8–18) is light, crisp and barely bitter, so the onions turn sweet.<sup class="cite"><a href="#src-7" aria-label="Source 7">7</a></sup></p>
+      <p><b>On the shelf.</b> Miller High Life or Pabst Blue Ribbon are the Milwaukee classics. Leinenkugel's, from Chippewa Falls, Wisconsin, is often stocked.</p>
+      <p><b>Avoid.</b> IPAs and dark beers. The onions are reduced in the beer and served as a topping, so any bitterness ends up on the bun.</p>
+    </section>
+    <section aria-labelledby="usa-shop">
+      <h3 id="usa-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">19 oz pack (5)<span class="m">540 g</span></span><span class="it">Fresh (raw) bratwurst</span><span class="pr" title="EST: $6.49 per 19 oz pack of 5">$6.49<span class="badge b-est">EST</span></span></li>
+<li><span class="q">5</span><span class="it">Hard rolls or brat buns</span><span class="pr" title="EST: $3.99 per pack of 6">$3.33<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 large<span class="m">500 g</span></span><span class="it">Yellow onions, sliced</span><span class="pr" title="EST: $1.49 per lb">$1.64<span class="badge b-est">EST</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">2 × 12 oz cans<span class="m">710 ml</span></span><span class="it">American lager</span><span class="pr" title="BLS: $1.41 per 12 oz">$2.81<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">2 tbsp<span class="m">30 g</span></span><span class="it">Butter</span><span class="pr" title="EST: $4.99 per lb">$0.31<span class="badge b-est">EST</span></span></li>
+<li><span class="q">to serve</span><span class="it">Brown or spicy mustard</span><span class="pr" title="EST: $2.49 per 12 oz bottle">$0.25<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 cup (optional)<span class="m">150 g</span></span><span class="it">Sauerkraut</span><span class="pr" title="EST: $3.49 per 32 oz jar">$0.87<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$15.70</span></div>
+        <div><span class="ck">Per head (5)</span><span class="cv">$3.14</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="usa-method">
+      <h3 id="usa-method">Method</h3>
+      <ol class="steps"><li>Melt the butter in the skillet over medium heat and cook the onions with a pinch of salt for 5 minutes, until they start to soften.</li>
+<li>Pour in the beer and bring it to a bare simmer, with small bubbles only at the edge. Add the brats. Poach for 15–20 minutes, turning them halfway, until they are firm and grey-white all through (160°F/71°C inside). Don't let it boil, or the casings will split.</li>
+<li>Heat the broiler with a rack about 4 inches (10 cm) below it. Move the brats to the sheet tray.</li>
+<li>Turn the heat under the skillet to high and boil the onions in the remaining beer for about 10 minutes, until the liquid has almost gone and the onions are soft and jammy.</li>
+<li>Broil the brats for 3–4 minutes a side, until the casings blister and brown.</li>
+<li>For the Sheboygan finish, drop the browned brats back into the onions for a few minutes. Serve on the rolls with mustard, a heap of onions and sauerkraut, if using.</li></ol>
+      <p class="serve"><b>Serve.</b> Potato salad or coleslaw.</p>
+    </section>
+    <section aria-labelledby="usa-subs">
+      <h3 id="usa-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>No hard rolls</dt><dd>Hot-dog buns work, but they go soggy under the onions. Toast them first.</dd></div>
+<div class="sub"><dt>Pre-cooked brats</dt><dd>These need only 5 minutes in the beer to heat through. They take up less flavour.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>A non-alcoholic lager is a near-exact swap here. Stock or water with a pinch of sugar gives you good boiled brats that taste much less of beer.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="usa-drink"><h3 id="usa-drink">To drink with it</h3><p>The same lager, or Leinenkugel's Original.</p></section>
+      <section aria-labelledby="usa-left"><h3 id="usa-left">Leftovers</h3><p>Cooked brats keep 3 days and freeze for 2 months. The onions keep a week in the fridge.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 40–85%. Brats poached about 15 minutes (USDA code 5004, 40%); the onions sit in beer that is kept hot, which the table puts as high as 85% (code 5002). That is roughly 2.1–4.4 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="mexico" aria-labelledby="mexico-title" data-region="Americas" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Deglazing"><span>DEGLAZE</span></div>
+  <p class="lab-top"><span class="lab-no">No. 09</span><span>Mexico</span><span class="lab-city">Monterrey</span></p>
+  <h2 class="lab-dish" id="mexico-title">Discada norteña</h2>
+  
+  <p class="lab-local" lang="es"><span class="loc-note">Spanish: “disc dish” from the north</span></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">Mexican pale lager</span>
+    <span class="sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 2–6 · straw to gold</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>25 min</dd></div>
+    <div><dt>Total</dt><dd>50 min</dd></div>
+    <div><dt>Serves</dt><dd>6</dd></div>
+    <div><dt>Per head</dt><dd>$5.49</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Dutch oven</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weeknight">Weeknight</span><span>Beer role: Deglazing</span><span>Alcohol retained: 40%</span></p>
+</div>
+<p class="standfirst">Northern Mexico's mixed-meat feast, cooked in stages in its own fat and finished with lager.</p>
+<div class="headnote"><p>Discada takes its name from the disco de arado, a worn plough disc set on legs over a wood fire, which works like a huge, shallow wok. It is a dish of the north: Coahuila, Chihuahua, Durango and Nuevo León all claim it. A Mexican university paper on the dish says it is believed to come from farmworkers, and that no fixed recipe exists, since it changes from state to state and house to house.<sup class="cite"><a href="#src-40" aria-label="Source 40">40</a></sup> Any precise origin story, including the one about a lunch shared by field hands on a plough disc, is folklore.<sup class="cite"><a href="#src-42" aria-label="Source 42">42</a></sup></p>
+<p>Bacon goes in first, and every other meat fries in its fat in turn: chorizo, pork, beef, sausage and ham. The vegetables follow, and a can of beer goes in last, deglazing the disc and cooking down into the meat. The university write-up lists 350 ml of beer and a deglazing step, and Mexican newspaper recipes include it as standard, though some call it optional.<sup class="cite"><a href="#src-40" aria-label="Source 40">40</a></sup><sup class="cite"><a href="#src-41" aria-label="Source 41">41</a></sup></p>
+<p>Monterrey is a beer city. Cervecería Cuauhtémoc was founded there in 1890, and its first beer was Carta Blanca.<sup class="cite"><a href="#src-43" aria-label="Source 43">43</a></sup> For the regiomontanos, a carne asada without beer is a rare sight.<sup class="cite"><a href="#src-44" aria-label="Source 44">44</a></sup> Discada is eaten the same way, in flour tortillas, at a party.</p>
+<p class="checked"><b>Checked.</b> Beer as a deglazing liquid is confirmed in an academic description and press recipes. Origin stories are marked as folklore.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="mexico-beer">
+      <h3 id="mexico-beer">The beer</h3>
+      <p>A Mexican pale lager (SRM 2–6) is light and barely bitter. It lifts the browned bits and cooks off quickly, leaving malt and a little sweetness.<sup class="cite"><a href="#src-8" aria-label="Source 8">8</a></sup></p>
+      <p><b>On the shelf.</b> Tecate, Carta Blanca and Modelo Especial are all easy to find.</p>
+      <p><b>Avoid.</b> IPAs. A dark lager works but browns the vegetables and makes the dish heavier.</p>
+    </section>
+    <section aria-labelledby="mexico-shop">
+      <h3 id="mexico-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">1 lb<span class="m">450 g</span></span><span class="it">Beef sirloin or round steak, in ½-inch (1 cm) dice</span><span class="pr" title="BLS: $9.84 per lb">$9.84<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">1 lb<span class="m">450 g</span></span><span class="it">Boneless pork chops, in ½-inch (1 cm) dice</span><span class="pr" title="BLS: $4.22 per lb">$4.22<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">6 oz<span class="m">170 g</span></span><span class="it">Bacon, chopped</span><span class="pr" title="BLS: $6.76 per lb">$2.53<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">6 oz<span class="m">170 g</span></span><span class="it">Fresh Mexican chorizo, casing removed</span><span class="pr" title="EST: $2.99 per 9 oz pack">$1.99<span class="badge b-est">EST</span></span></li>
+<li><span class="q">4<span class="m">200 g</span></span><span class="it">Hot dogs (franks), sliced</span><span class="pr" title="EST: $4.49 per 1 lb pack">$2.25<span class="badge b-est">EST</span></span></li>
+<li><span class="q">4 oz<span class="m">115 g</span></span><span class="it">Ham, diced</span><span class="pr" title="BLS: $5.45 per lb">$1.36<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">1 large<span class="m">250 g</span></span><span class="it">White or yellow onion, chopped</span><span class="pr" title="EST: $1.49 per lb">$0.82<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1</span><span class="it">Green bell pepper, chopped</span><span class="pr" title="EST: $1.29 per each">$1.29<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2</span><span class="it">Jalapeños, sliced</span><span class="pr" title="EST: $0.20 per each">$0.40<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2<span class="m">300 g</span></span><span class="it">Tomatoes, chopped</span><span class="pr" title="BLS: $1.99 per lb">$1.31<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">12</span><span class="it">Flour tortillas</span><span class="pr" title="EST: $3.49 per pack of 10">$4.19<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2</span><span class="it">Limes, in wedges</span><span class="pr" title="EST: $0.50 per each">$1.00<span class="badge b-est">EST</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">12 oz can<span class="m">355 ml</span></span><span class="it">Mexican lager</span><span class="pr" title="EST: $1.67 per 12 oz can (6-pack ~$10)">$1.67<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tsp<span class="m">5 ml</span></span><span class="it">Worcestershire sauce (optional)</span><span class="pr" title="EST: $3.49 per 10 oz bottle">$0.06<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$32.93</span></div>
+        <div><span class="ck">Per head (6)</span><span class="cv">$5.49</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="mexico-method">
+      <h3 id="mexico-method">Method</h3>
+      <ol class="steps"><li>Set the Dutch oven over medium heat. Cook the bacon for 6–7 minutes, until its fat has run and it is crisp at the edges.</li>
+<li>Add the chorizo, breaking it up, and cook for 3 minutes until it has stained the fat red.</li>
+<li>Raise the heat to medium-high. Add the pork and cook for 6 minutes, stirring now and then, until it is no longer pink. Add the beef and cook for 5 minutes more.</li>
+<li>Add the franks and ham and cook for 3 minutes. Season with salt and pepper, going easy on the salt.</li>
+<li>Stir in the onion, pepper and jalapeños and cook for 5 minutes, until softened. Add the tomatoes and Worcestershire, if using.</li>
+<li>Pour in the beer, scrape the base and simmer uncovered for 10–15 minutes, stirring, until most of the liquid has gone and the meat glistens.</li>
+<li>Warm the tortillas in a dry skillet. Serve the discada in the pot with tortillas, lime and your favourite salsa.</li></ol>
+      <p class="serve"><b>Serve.</b> Tortillas, salsa, lime, and beans if you have them.</p>
+    </section>
+    <section aria-labelledby="mexico-subs">
+      <h3 id="mexico-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>Fewer packets</dt><dd>Cut it to bacon, chorizo, beef and pork; the franks and ham are the most optional. It is still a discada, only less of a party.</dd></div>
+<div class="sub"><dt>No fresh chorizo</dt><dd>Use a little extra bacon and a teaspoon of smoked paprika. You lose the chorizo's red, spiced fat.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>A non-alcoholic lager works well. Water or stock is what many home cooks use anyway; you lose a little malt sweetness.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="mexico-drink"><h3 id="mexico-drink">To drink with it</h3><p>Tecate or Carta Blanca with lime. A michelada, lager with lime, salt and hot sauce, is the northern serving note.</p></section>
+      <section aria-labelledby="mexico-left"><h3 id="mexico-left">Leftovers</h3><p>Keeps 4 days and reheats well in the skillet. Freezes for 2 months.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 40%. Beer added near the end and cooked down for 10–15 minutes (USDA code 5004, 15 minutes). That is roughly 0.8 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="peru" aria-labelledby="peru-title" data-region="Americas" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Cooking liquid for rice"><span>RICE</span></div>
+  <p class="lab-top"><span class="lab-no">No. 10</span><span>Peru</span><span class="lab-city">Lima</span></p>
+  <h2 class="lab-dish" id="peru-title">Arroz con pollo</h2>
+  
+  <p class="lab-local" lang="es"><span class="loc-note">Spanish: rice with chicken</span></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">Dark lager (cerveza negra)</span>
+    <span class="sw" style="--c1:#C35900;--c2:#5E0B00" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 14–30 · brown to dark brown</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>25 min</dd></div>
+    <div><dt>Total</dt><dd>1 hr</dd></div>
+    <div><dt>Serves</dt><dd>6</dd></div>
+    <div><dt>Per head</dt><dd>$3.47</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Dutch oven</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weeknight">Weeknight</span><span>Beer role: Cooking liquid for rice</span><span>Alcohol retained: 35%</span></p>
+</div>
+<p class="standfirst">Lima's green rice with chicken, coloured with a whole bunch of coriander and deepened with dark beer.</p>
+<div class="headnote"><p>Peruvian arroz con pollo is green. A blended paste of coriander (cilantro) colours the rice, and dark beer (cerveza negra) goes into the cooking liquid, as standard in Lima's newspaper recipes.<sup class="cite"><a href="#src-45" aria-label="Source 45">45</a></sup><sup class="cite"><a href="#src-46" aria-label="Source 46">46</a></sup> It is everyday food, served with a tangle of salsa criolla, which is onion and lime.</p>
+<p>The usual explanation is that the dish adapts arroz con pato, the duck-and-rice dish of Chiclayo on the north coast, with chicken for duck and dark beer for chicha de jora.<sup class="cite"><a href="#src-45" aria-label="Source 45">45</a></sup><sup class="cite"><a href="#src-46" aria-label="Source 46">46</a></sup> It is a tidy story and is repeated everywhere, but I found no documentation, so treat it as contested.</p>
+<p>Chicha de jora is the older beer: a maize beer of the Andes, brewed for millennia and drunk in large amounts at Inca festivals. Mills believed to have been used for it have been found at Machu Picchu.<sup class="cite"><a href="#src-47" aria-label="Source 47">47</a></sup> European brewing arrived with immigrants. Cusqueña was founded in Cusco in 1908 by a German, Ernesto Günther, and its range includes a Negra.<sup class="cite"><a href="#src-48" aria-label="Source 48">48</a></sup> Today Backus has about 95% of the Peruvian market.<sup class="cite"><a href="#src-49" aria-label="Source 49">49</a></sup></p>
+<p class="checked"><b>Checked.</b> Dark beer as the standard ingredient is confirmed in Peruvian press. The arroz con pato derivation is contested and marked so.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="peru-beer">
+      <h3 id="peru-beer">The beer</h3>
+      <p>A dark lager (SRM 14–30, IBU 8–20) adds roasted, caramel depth without bitterness, and is mild enough not to grey the coriander.<sup class="cite"><a href="#src-8" aria-label="Source 8">8</a></sup></p>
+      <p><b>On the shelf.</b> Cusqueña Negra where sold. Shiner Bock, or any Munich dunkel, is the widely stocked fallback.</p>
+      <p><b>Avoid.</b> Stouts, which are too roasty and turn the rice a muddy brown, and IPAs.</p>
+    </section>
+    <section aria-labelledby="peru-shop">
+      <h3 id="peru-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">3 lb<span class="m">1.36 kg</span></span><span class="it">Bone-in chicken legs or thighs, skin on</span><span class="pr" title="BLS: $1.74 per lb">$5.22<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">2 large bunches</span><span class="it">Coriander (cilantro), leaves and tender stems</span><span class="pr" title="EST: $1.29 per bunch">$2.58<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1</span><span class="it">Yellow bell pepper, half blended, half in strips</span><span class="pr" title="EST: $1.29 per each">$1.29<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1</span><span class="it">Red bell pepper, in strips</span><span class="pr" title="EST: $1.29 per each">$1.29<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1</span><span class="it">Jalapeño, seeded</span><span class="pr" title="EST: $0.20 per each">$0.20<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 large<span class="m">250 g</span></span><span class="it">Red onion: half chopped, half thinly sliced for the salsa</span><span class="pr" title="EST: $1.69 per lb">$0.93<span class="badge b-est">EST</span></span></li>
+<li><span class="q">4 cloves</span><span class="it">Garlic, crushed</span><span class="pr" title="EST: $0.69 per head">$0.28<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2<span class="m">300 g</span></span><span class="it">Carrots, diced</span><span class="pr" title="EST: $1.29 per lb">$0.85<span class="badge b-est">EST</span></span></li>
+<li><span class="q">3</span><span class="it">Limes</span><span class="pr" title="EST: $0.50 per each">$1.50<span class="badge b-est">EST</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">2½ cups<span class="m">465 g</span></span><span class="it">Long-grain white rice</span><span class="pr" title="BLS: $1.12 per lb">$1.23<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">1 cup<span class="m">140 g</span></span><span class="it">Frozen peas</span><span class="pr" title="EST: $1.99 per 12 oz bag">$0.84<span class="badge b-est">EST</span></span></li>
+<li><span class="q">½ cup<span class="m">75 g</span></span><span class="it">Frozen corn</span><span class="pr" title="EST: $1.99 per 12 oz bag">$0.42<span class="badge b-est">EST</span></span></li>
+<li><span class="q">12 oz bottle<span class="m">355 ml</span></span><span class="it">Dark lager</span><span class="pr" title="EST: $1.83 per 12 oz bottle (6-pack ~$11)">$1.83<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2½ cups<span class="m">600 ml</span></span><span class="it">Chicken stock (broth)</span><span class="pr" title="EST: $3.29 per 32 oz carton">$2.06<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 tsp<span class="m">2 g</span></span><span class="it">Ground cumin</span><span class="pr" title="EST: $3.99 per 1.5 oz jar">$0.19<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 tbsp<span class="m">30 ml</span></span><span class="it">Neutral oil</span><span class="pr" title="EST: $6.99 per 48 oz bottle">$0.15<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$20.84</span></div>
+        <div><span class="ck">Per head (6)</span><span class="cv">$3.47</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="peru-method">
+      <h3 id="peru-method">Method</h3>
+      <ol class="steps"><li>Blend the coriander with the half yellow pepper, the jalapeño and ½ cup (120 ml) of the stock until completely smooth.</li>
+<li>Season the chicken. Brown it skin side down in the oil in the Dutch oven over medium-high heat, about 6 minutes, then 2 minutes on the other side. Set aside.</li>
+<li>Lower the heat to medium. Cook the chopped red onion, garlic and cumin for 5 minutes until soft.</li>
+<li>Add the coriander paste and fry it for 3–4 minutes, stirring, until it darkens from bright to deep green and smells cooked.</li>
+<li>Pour in the beer and boil for 2 minutes. Add the rest of the stock, return the chicken and simmer, covered, for 15 minutes.</li>
+<li>Stir in the rice, carrots, corn and pepper strips, pushing the rice under the liquid. Bring back to a simmer, cover tightly and cook on the lowest heat for 20 minutes, without lifting the lid.</li>
+<li>Scatter the peas over, cover again, take the pot off the heat and rest for 5 minutes. While it rests, toss the sliced red onion with the juice of 2 limes and a good pinch of salt. That is the salsa criolla. Fluff the rice with a fork and serve with the salsa and lime wedges.</li></ol>
+      <p class="serve"><b>Serve.</b> Salsa criolla is part of the dish. Peruvian cooks often add papa a la huancaína on the side.</p>
+    </section>
+    <section aria-labelledby="peru-subs">
+      <h3 id="peru-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>Ají amarillo paste</dt><dd>If you can find a jar (Goya makes one), add 2 tbsp with the onions and leave out the jalapeño. It is the Peruvian original and gives a fruity heat that a bell pepper only hints at. It keeps for months in the fridge.</dd></div>
+<div class="sub"><dt>Boneless chicken</dt><dd>Thighs cut in large pieces work and save 10 minutes, but the rice is less rich.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>Malta Goya, a non-alcoholic malt drink, is closest to the dark beer's sweetness.<sup class="cite"><a href="#src-5" aria-label="Source 5">5</a></sup> Use half a bottle with extra stock. Stock alone gives a good green rice with less depth.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="peru-drink"><h3 id="peru-drink">To drink with it</h3><p>Cusqueña Dorada or any pale lager. Inca Kola, sold in Latin aisles, is the Peruvian soft drink for the children.</p></section>
+      <section aria-labelledby="peru-left"><h3 id="peru-left">Leftovers</h3><p>Cool the rice quickly and refrigerate within an hour. It keeps 3 days and freezes reasonably well.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 35%. Simmered about 35 minutes, then absorbed by the rice (USDA code 5005, 30 minutes). The rice soaks up the liquid, so the real figure may be higher. That is roughly 0.8 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="vietnam" aria-labelledby="vietnam-title" data-region="Asia" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Steaming liquid"><span>STEAM</span></div>
+  <p class="lab-top"><span class="lab-no">No. 11</span><span>Vietnam</span><span class="lab-city">Ho Chi Minh City</span></p>
+  <h2 class="lab-dish" id="vietnam-title">Tôm hấp bia sả</h2>
+  
+  <p class="lab-local" lang="vi"><span class="loc-note">Vietnamese: shrimp steamed with beer and lemongrass</span></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">Light lager</span>
+    <span class="sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 2–6 · straw to gold</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>10 min</dd></div>
+    <div><dt>Total</dt><dd>20 min</dd></div>
+    <div><dt>Serves</dt><dd>4</dd></div>
+    <div><dt>Per head</dt><dd>$5.56</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Dutch oven with lid</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weeknight">Weeknight</span><span>Beer role: Steaming liquid</span><span>Alcohol retained: 40–85%</span></p>
+</div>
+<p class="standfirst">Shell-on shrimp steamed over beer and bruised lemongrass, with salt, pepper and lime to dip.</p>
+<div class="headnote"><p>Hấp bia, steaming with beer, is a whole family of Vietnamese dishes. Vietnamese cooking sites list sixteen or more, among them shrimp, fish, crab, chicken and pork knuckle.<sup class="cite"><a href="#src-50" aria-label="Source 50">50</a></sup> They are nhậu food, eaten with friends over drinks, and shrimp with lemongrass is the simplest of them. Beer is poured over the shrimp in the steamer and perfumes them as they turn pink.<sup class="cite"><a href="#src-51" aria-label="Source 51">51</a></sup> No origin is documented, and the method is plainly modern.</p>
+<p>Beer itself arrived with the French. The Vietnamese word bia comes from bière.<sup class="cite"><a href="#src-53" aria-label="Source 53">53</a></sup> Victor Larue opened a brewery in Saigon in 1875, the start of what became Sabeco and Bia Saigon. Alfred Hommel opened Hanoi's first brewery in 1890, which became Habeco, the maker of Bia Hà Nội.<sup class="cite"><a href="#src-52" aria-label="Source 52">52</a></sup> By 2019 the country was producing 4.4 billion litres a year.<sup class="cite"><a href="#src-53" aria-label="Source 53">53</a></sup></p>
+<p>You don't need a steamer for this. The Dutch oven, a bed of lemongrass and a tight lid do the job.</p>
+<p class="checked"><b>Checked.</b> The dish and method are confirmed in Vietnamese recipe sources. The brewery dates are sourced. No origin claim is made.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="vietnam-beer">
+      <h3 id="vietnam-beer">The beer</h3>
+      <p>A light lager (SRM 2–6) adds a faint malt sweetness to the steam without bitterness.<sup class="cite"><a href="#src-8" aria-label="Source 8">8</a></sup></p>
+      <p><b>On the shelf.</b> Bia Saigon and 333 are sold in some US supermarkets. Any light American lager works the same way.</p>
+      <p><b>Avoid.</b> IPAs and dark beers, which make the shrimp taste bitter or muddy.</p>
+    </section>
+    <section aria-labelledby="vietnam-shop">
+      <h3 id="vietnam-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">2 lb<span class="m">900 g</span></span><span class="it">Shell-on frozen shrimp, large (21–25 per lb), thawed</span><span class="pr" title="EST: $15.99 per 2 lb bag, frozen">$15.99<span class="badge b-est">EST</span></span></li>
+<li><span class="q">4 stalks</span><span class="it">Lemongrass</span><span class="pr" title="EST: $0.89 per stalk">$3.56<span class="badge b-est">EST</span></span></li>
+<li><span class="q">3 cloves</span><span class="it">Garlic, smashed</span><span class="pr" title="EST: $0.69 per head">$0.21<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2</span><span class="it">Red chillies (Fresno), sliced</span><span class="pr" title="EST: $0.25 per each">$0.50<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2</span><span class="it">Limes</span><span class="pr" title="EST: $0.50 per each">$1.00<span class="badge b-est">EST</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">about ⅔ of a 12 oz can<span class="m">250 ml</span></span><span class="it">Light lager</span><span class="pr" title="BLS: $1.41 per 12 oz">$0.99<span class="badge b-bls">BLS</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$22.25</span></div>
+        <div><span class="ck">Per head (4)</span><span class="cv">$5.56</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="vietnam-method">
+      <h3 id="vietnam-method">Method</h3>
+      <ol class="steps"><li>Trim the lemongrass, cut it into 3-inch (8 cm) lengths and bruise them with the back of a knife. Lay them over the base of the Dutch oven with the garlic and half the chilli.</li>
+<li>Rinse and pat dry the shrimp, and spread them on the lemongrass. Season lightly with salt.</li>
+<li>Pour the beer over the shrimp, cover tightly and set over high heat.</li>
+<li>Steam for 6–8 minutes, shaking the pot once, until every shrimp has turned pink and curled into a loose C. A tight O means it is overcooked.</li>
+<li>While it cooks, make the dip (muối tiêu chanh): a spoonful of salt and plenty of black pepper in a saucer, with the juice of a lime squeezed in at the table and the rest of the chilli.</li>
+<li>Tip the shrimp onto a platter with the lemongrass and a spoon of the pan juices. Peel at the table and dip.</li></ol>
+      <p class="serve"><b>Serve.</b> Steamed jasmine rice and a plate of lettuce, cucumber and herbs.</p>
+    </section>
+    <section aria-labelledby="vietnam-subs">
+      <h3 id="vietnam-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>No lemongrass</dt><dd>Use a few strips of lime zest and a thumb of sliced ginger. You get a different and still good steamed shrimp. Spare lemongrass freezes well.</dd></div>
+<div class="sub"><dt>Peeled shrimp</dt><dd>They cook in 3–4 minutes but take up less flavour and dry out faster.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>Coconut water is another Vietnamese steaming liquid for shrimp (tôm hấp nước dừa) and gives a sweeter, alcohol-free dish. A non-alcoholic lager is closer to the original.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="vietnam-drink"><h3 id="vietnam-drink">To drink with it</h3><p>Bia Saigon or 333, or any cold light lager.</p></section>
+      <section aria-labelledby="vietnam-left"><h3 id="vietnam-left">Leftovers</h3><p>Best eaten at once. Peeled leftovers keep 2 days in the fridge, for salads or fried rice. Do not refreeze.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 40–85%. Steaming is not in the USDA table. The cooking is brief, so take at least the 15-minute figure (40%); shrimp dipped in the hot liquid sit closer to code 5002 (85%). That is roughly 1.0–2.1 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+<article class="recipe" id="korea" aria-labelledby="korea-title" data-region="Asia" >
+
+<div class="label" aria-label="Recipe label">
+  <div class="cap" title="Boiling liquid"><span>BOIL</span></div>
+  <p class="lab-top"><span class="lab-no">No. 12</span><span>South Korea</span><span class="lab-city">Seoul</span></p>
+  <h2 class="lab-dish" id="korea-title">Maekju suyuk</h2>
+  <p class="lab-alt">beer-boiled pork</p>
+  <p class="lab-local" lang="ko">맥주 수육 · <span class="loc-note">Korean, romanised <i>maekju suyuk</i>: beer boiled meat</span></p>
+  <div class="ribbon">
+    <span class="rb-k">Brewed with</span>
+    <span class="rb-v">Light lager</span>
+    <span class="sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>
+    <span class="rb-srm">SRM 2–6 · straw to gold</span>
+  </div>
+  <dl class="lab-stats">
+    <div><dt>Active</dt><dd>15 min</dd></div>
+    <div><dt>Total</dt><dd>55 min</dd></div>
+    <div><dt>Serves</dt><dd>4</dd></div>
+    <div><dt>Per head</dt><dd>$6.81</dd></div>
+    <div class="wide"><dt>Vessel</dt><dd>Dutch oven</dd></div>
+  </dl>
+  <p class="lab-foot"><span class="tier tier-weeknight">Weeknight</span><span>Beer role: Boiling liquid</span><span>Alcohol retained: 25–35%</span></p>
+</div>
+<p class="standfirst">Pork belly boiled in beer and aromatics, sliced and wrapped in leaves with kimchi.</p>
+<div class="headnote"><p>Suyuk is boiled meat, and bossam is pork belly boiled, sliced thin and wrapped in leaves with kimchi and garlic. It is often eaten as anju, food that goes with drink, and it is traditionally tied to gimjang, the autumn kimchi-making, when the household ate boiled pork with the fresh new kimchi.<sup class="cite"><a href="#src-54" aria-label="Source 54">54</a></sup> The boiling liquid is seasoned to cut the porkiness, with doenjang, coffee, tea or ginger.<sup class="cite"><a href="#src-54" aria-label="Source 54">54</a></sup></p>
+<p>Beer is one of those options. Korea's biggest recipe site carries maekju suyuk as a home dish: the pork is seared, then boiled in a can of beer with onion, garlic and bay, uncovered at first so the alcohol and the porky smell go off together.<sup class="cite"><a href="#src-55" aria-label="Source 55">55</a></sup> It is modern and optional, and this is the book's least traditional entry, included because it is how many Korean home cooks make the dish now.</p>
+<p>Beer came to Korea in the early 20th century, and Seoul's first brewery opened in 1908. The two companies that became Hite and OB were both founded in 1933.<sup class="cite"><a href="#src-56" aria-label="Source 56">56</a></sup></p>
+<p class="checked"><b>Checked.</b> The dish, its serving and the gimjang link are confirmed. Beer as the boiling liquid is a documented modern home method and is marked as recent.</p></div>
+<div class="cols">
+  <div class="col-side">
+    <section class="beerbox" aria-labelledby="korea-beer">
+      <h3 id="korea-beer">The beer</h3>
+      <p>A light lager (SRM 2–6) is cheap and neutral. Its job is to flavour the pork lightly and carry the aromatics.<sup class="cite"><a href="#src-8" aria-label="Source 8">8</a></sup></p>
+      <p><b>On the shelf.</b> Cass or Hite where sold; any light American lager works.</p>
+      <p><b>Avoid.</b> Hoppy or dark beers, which leave the pork bitter.</p>
+    </section>
+    <section aria-labelledby="korea-shop">
+      <h3 id="korea-shop">Shopping</h3>
+      <h4 class="grp">Fresh</h4><ul class="shop">
+<li><span class="q">2 lb<span class="m">900 g</span></span><span class="it">Skinless pork belly in one slab (or pork shoulder)</span><span class="pr" title="EST: $5.99 per lb">$11.98<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 medium<span class="m">150 g</span></span><span class="it">Yellow onion, halved</span><span class="pr" title="EST: $1.49 per lb">$0.49<span class="badge b-est">EST</span></span></li>
+<li><span class="q">8 cloves</span><span class="it">Garlic: 6 whole for the pot, 2 sliced to serve</span><span class="pr" title="EST: $0.69 per head">$0.55<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 inch<span class="m">25 g</span></span><span class="it">Fresh ginger, sliced</span><span class="pr" title="EST: $3.99 per lb">$0.25<span class="badge b-est">EST</span></span></li>
+<li><span class="q">3</span><span class="it">Spring onions (scallions)</span><span class="pr" title="EST: $1.19 per bunch">$0.59<span class="badge b-est">EST</span></span></li>
+<li><span class="q">1 head<span class="m">500 g</span></span><span class="it">Romaine or Napa cabbage leaves, for wrapping</span><span class="pr" title="BLS: $3.31 per lb">$3.64<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">16 oz jar<span class="m">450 g</span></span><span class="it">Kimchi</span><span class="pr" title="EST: $6.99 per 16 oz jar">$6.99<span class="badge b-est">EST</span></span></li>
+</ul>
+<h4 class="grp">Pantry</h4><ul class="shop">
+<li><span class="q">12 oz can<span class="m">355 ml</span></span><span class="it">Light lager</span><span class="pr" title="BLS: $1.41 per 12 oz">$1.41<span class="badge b-bls">BLS</span></span></li>
+<li><span class="q">1 tsp<span class="m">3 g</span></span><span class="it">Black peppercorns</span><span class="pr" title="EST: $4.49 per 2 oz jar">$0.22<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2</span><span class="it">Bay leaves</span><span class="pr" title="EST: $3.99 per jar of ~25 leaves">$0.32<span class="badge b-est">EST</span></span></li>
+<li><span class="q">2 tbsp<span class="m">30 ml</span></span><span class="it">Toasted sesame oil, for the dip</span><span class="pr" title="EST: $3.99 per 5 oz bottle">$0.80<span class="badge b-est">EST</span></span></li>
+</ul>
+      <div class="cost">
+        <div><span class="ck">Basket</span><span class="cv">$27.25</span></div>
+        <div><span class="ck">Per head (4)</span><span class="cv">$6.81</span></div>
+        <p class="basis">Ballpark, October 2026. Ingredients counted at the share used; beer at its share of a multipack. Salt and pepper not counted. Serving sides are not included. <a href="#prices">How the prices work</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-main">
+    <section aria-labelledby="korea-method">
+      <h3 id="korea-method">Method</h3>
+      <ol class="steps"><li>Cut the pork into two or three pieces that fit the pot lying flat, each about 2 inches (5 cm) thick.</li>
+<li>Sear the pork in the dry Dutch oven over medium-high heat, about 3 minutes a side, until golden on all faces.</li>
+<li>Add the onion, 6 garlic cloves, ginger, spring onions, peppercorns and bay. Pour in the beer and enough water to come halfway up the pork.</li>
+<li>Boil uncovered on high for 10 minutes. Then cover, turn to medium-low and simmer for 25–30 minutes, until a chopstick slides into the thickest piece with little resistance.</li>
+<li>Turn off the heat and leave the pork in the covered pot for 10 minutes to settle.</li>
+<li>Mix the sesame oil with a good pinch of salt and black pepper for the dip. Slice the pork across the grain about ¼ inch (5 mm) thick.</li>
+<li>To eat, lay a slice in a leaf with a little kimchi and a slice of raw garlic, dip, wrap and eat in one bite.</li></ol>
+      <p class="serve"><b>Serve.</b> Rice and a bowl of soup make it a full meal.</p>
+    </section>
+    <section aria-labelledby="korea-subs">
+      <h3 id="korea-subs">If you don’t have it</h3>
+      <dl class="subs"><div class="sub"><dt>Doenjang</dt><dd>If you have it, rub 1 tbsp over the pork before boiling, as the Korean recipe does.<sup class="cite"><a href="#src-55" aria-label="Source 55">55</a></sup> White miso is a close swap. Without either, the pork is milder.</dd></div>
+<div class="sub"><dt>Ssamjang and saeu-jeot</dt><dd>These are the classic dips, a spicy soybean paste and tiny salted shrimp, and both are single-use buys here. The sesame-oil dip (gireumjang) is a genuine Korean alternative.</dd></div>
+<div class="sub"><dt>Non-alcoholic</dt><dd>Water with an extra slice of ginger and the bay is the older method and works well. A non-alcoholic lager changes little.</dd></div></dl>
+    </section>
+    <div class="twin">
+      <section aria-labelledby="korea-drink"><h3 id="korea-drink">To drink with it</h3><p>Cass or Hite, or any light lager.</p></section>
+      <section aria-labelledby="korea-left"><h3 id="korea-left">Leftovers</h3><p>The slab keeps 3 days in the fridge. Reheat slices briefly in a steamer or covered pan with a splash of water. Freezes for 2 months.</p></section>
+    </div>
+    <p class="alc"><b>Alcohol.</b> Retention band 25–35%. Boiled about 35 minutes (USDA code 5005). Most of the liquid is discarded, so what reaches the plate is likely lower. That is roughly 0.8–1.1 g of alcohol per serving, against 14 g in one US standard drink.<sup class="cite"><a href="#src-3" aria-label="Source 3">3</a></sup></p>
+  </div>
+</div>
+<p class="top"><a href="#index">Back to the index</a></p>
+</article>
+</div>
+
+<section class="sect back" id="shelf" aria-labelledby="shelf-h">
+<h2 id="shelf-h">The shelf</h2>
+<p class="prose lead">What the book asks you to keep, and how often you'll use it. Fresh ingredients are not listed.</p>
+<div class="shelfcols">
+<div><h3>Pantry</h3><ul class="shelf"><li><span class="sh-n">Butter</span><span class="sh-c">5</span><span class="sh-r"><a href="#belgium">Stoofvlees</a>, <a href="#england">Steak and ale pie</a>, <a href="#france">Coq à la bière</a>, <a href="#portugal">Francesinha</a>, <a href="#usa">Beer brats</a></span></li>
+<li><span class="sh-n">Neutral oil</span><span class="sh-c">5</span><span class="sh-r"><a href="#belgium">Stoofvlees</a>, <a href="#czechia">Pivní guláš</a>, <a href="#england">Steak and ale pie</a>, <a href="#ireland">Beef and stout stew</a>, <a href="#peru">Arroz con pollo</a></span></li>
+<li><span class="sh-n">Plain flour</span><span class="sh-c">5</span><span class="sh-r"><a href="#belgium">Stoofvlees</a>, <a href="#czechia">Pivní guláš</a>, <a href="#england">Steak and ale pie</a>, <a href="#ireland">Beef and stout stew</a>, <a href="#france">Coq à la bière</a></span></li>
+<li><span class="sh-n">Bay leaves</span><span class="sh-c">4</span><span class="sh-r"><a href="#belgium">Stoofvlees</a>, <a href="#england">Steak and ale pie</a>, <a href="#ireland">Beef and stout stew</a>, <a href="#korea">Maekju suyuk</a></span></li>
+<li><span class="sh-n">Beef stock</span><span class="sh-c">4</span><span class="sh-r"><a href="#czechia">Pivní guláš</a>, <a href="#england">Steak and ale pie</a>, <a href="#ireland">Beef and stout stew</a>, <a href="#portugal">Francesinha</a></span></li>
+<li><span class="sh-n">Dried thyme</span><span class="sh-c">4</span><span class="sh-r"><a href="#belgium">Stoofvlees</a>, <a href="#england">Steak and ale pie</a>, <a href="#ireland">Beef and stout stew</a>, <a href="#france">Coq à la bière</a></span></li>
+<li><span class="sh-n">Tomato paste</span><span class="sh-c">3</span><span class="sh-r"><a href="#czechia">Pivní guláš</a>, <a href="#england">Steak and ale pie</a>, <a href="#ireland">Beef and stout stew</a></span></li>
+<li><span class="sh-n">Worcestershire sauce</span><span class="sh-c">3</span><span class="sh-r"><a href="#england">Steak and ale pie</a>, <a href="#portugal">Francesinha</a>, <a href="#mexico">Discada norteña</a></span></li>
+<li><span class="sh-n">Bay leaf</span><span class="sh-c">2</span><span class="sh-r"><a href="#france">Coq à la bière</a>, <a href="#portugal">Francesinha</a></span></li>
+<li><span class="sh-n">Caraway seeds</span><span class="sh-c">2</span><span class="sh-r"><a href="#czechia">Pivní guláš</a>, <a href="#germany">Schweinsbraten</a></span></li>
+<li><span class="sh-n">Cornstarch</span><span class="sh-c">2</span><span class="sh-r"><a href="#germany">Schweinsbraten</a>, <a href="#portugal">Francesinha</a></span></li>
+<li><span class="sh-n">Sweet paprika</span><span class="sh-c">2</span><span class="sh-r"><a href="#czechia">Pivní guláš</a>, <a href="#portugal">Francesinha</a></span></li>
+<li><span class="sh-n">Beef or chicken stock</span><span class="sh-c">1</span><span class="sh-r"><a href="#germany">Schweinsbraten</a></span></li>
+<li><span class="sh-n">Black peppercorns</span><span class="sh-c">1</span><span class="sh-r"><a href="#korea">Maekju suyuk</a></span></li>
+<li><span class="sh-n">Brown or spicy mustard</span><span class="sh-c">1</span><span class="sh-r"><a href="#usa">Beer brats</a></span></li>
+<li><span class="sh-n">Chicken stock</span><span class="sh-c">1</span><span class="sh-r"><a href="#peru">Arroz con pollo</a></span></li>
+<li><span class="sh-n">Crushed tomatoes</span><span class="sh-c">1</span><span class="sh-r"><a href="#portugal">Francesinha</a></span></li>
+<li><span class="sh-n">Dark brown sugar</span><span class="sh-c">1</span><span class="sh-r"><a href="#belgium">Stoofvlees</a></span></li>
+<li><span class="sh-n">Dijon mustard</span><span class="sh-c">1</span><span class="sh-r"><a href="#belgium">Stoofvlees</a></span></li>
+<li><span class="sh-n">Frozen corn</span><span class="sh-c">1</span><span class="sh-r"><a href="#peru">Arroz con pollo</a></span></li>
+<li><span class="sh-n">Frozen peas</span><span class="sh-c">1</span><span class="sh-r"><a href="#peru">Arroz con pollo</a></span></li>
+<li><span class="sh-n">Frozen puff pastry</span><span class="sh-c">1</span><span class="sh-r"><a href="#england">Steak and ale pie</a></span></li>
+<li><span class="sh-n">Ground cumin</span><span class="sh-c">1</span><span class="sh-r"><a href="#peru">Arroz con pollo</a></span></li>
+<li><span class="sh-n">Hot sauce or piri-piri</span><span class="sh-c">1</span><span class="sh-r"><a href="#portugal">Francesinha</a></span></li>
+<li><span class="sh-n">Long-grain white rice</span><span class="sh-c">1</span><span class="sh-r"><a href="#peru">Arroz con pollo</a></span></li>
+<li><span class="sh-n">Milk</span><span class="sh-c">1</span><span class="sh-r"><a href="#portugal">Francesinha</a></span></li>
+<li><span class="sh-n">Red wine or cider vinegar</span><span class="sh-c">1</span><span class="sh-r"><a href="#belgium">Stoofvlees</a></span></li>
+<li><span class="sh-n">Sauerkraut</span><span class="sh-c">1</span><span class="sh-r"><a href="#usa">Beer brats</a></span></li>
+<li><span class="sh-n">Sugar</span><span class="sh-c">1</span><span class="sh-r"><a href="#ireland">Beef and stout stew</a></span></li>
+<li><span class="sh-n">Toasted sesame oil</span><span class="sh-c">1</span><span class="sh-r"><a href="#korea">Maekju suyuk</a></span></li></ul></div>
+<div><h3>Beer styles</h3><ul class="shelf"><li><span class="sh-n"><span class="sw sm-sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>Light lager</span><span class="sh-c">2</span><span class="sh-r"><a href="#vietnam">Tôm hấp bia sả</a>, <a href="#korea">Maekju suyuk</a></span></li>
+<li><span class="sh-n"><span class="sw sm-sw" style="--c1:#FFD878;--c2:#FFBF42" aria-hidden="true"></span>American lager</span><span class="sh-c">1</span><span class="sh-r"><a href="#usa">Beer brats</a></span></li>
+<li><span class="sh-n"><span class="sw sm-sw" style="--c1:#DE7C00;--c2:#B04500" aria-hidden="true"></span>Belgian dubbel or Flemish brown</span><span class="sh-c">1</span><span class="sh-r"><a href="#belgium">Stoofvlees</a></span></li>
+<li><span class="sh-n"><span class="sw sm-sw" style="--c1:#F8A600;--c2:#A13700" aria-hidden="true"></span>Bière de garde or amber</span><span class="sh-c">1</span><span class="sh-r"><a href="#france">Coq à la bière</a></span></li>
+<li><span class="sh-n"><span class="sw sm-sw" style="--c1:#B04500;--c2:#470606" aria-hidden="true"></span>Czech dark lager</span><span class="sh-c">1</span><span class="sh-r"><a href="#czechia">Pivní guláš</a></span></li>
+<li><span class="sh-n"><span class="sw sm-sw" style="--c1:#C35900;--c2:#5E0B00" aria-hidden="true"></span>Dark lager (cerveza negra)</span><span class="sh-c">1</span><span class="sh-r"><a href="#peru">Arroz con pollo</a></span></li>
+<li><span class="sh-n"><span class="sw sm-sw" style="--c1:#CF6900;--c2:#8E2900" aria-hidden="true"></span>English brown ale</span><span class="sh-c">1</span><span class="sh-r"><a href="#england">Steak and ale pie</a></span></li>
+<li><span class="sh-n"><span class="sw sm-sw" style="--c1:#7B1A00;--c2:#36080A" aria-hidden="true"></span>Irish dry stout</span><span class="sh-c">1</span><span class="sh-r"><a href="#ireland">Beef and stout stew</a></span></li>
+<li><span class="sh-n"><span class="sw sm-sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>Mexican pale lager</span><span class="sh-c">1</span><span class="sh-r"><a href="#mexico">Discada norteña</a></span></li>
+<li><span class="sh-n"><span class="sw sm-sw" style="--c1:#B04500;--c2:#6A0E00" aria-hidden="true"></span>Munich dunkel</span><span class="sh-c">1</span><span class="sh-r"><a href="#germany">Schweinsbraten</a></span></li>
+<li><span class="sh-n"><span class="sw sm-sw" style="--c1:#FFD878;--c2:#F8A600" aria-hidden="true"></span>Pale lager</span><span class="sh-c">1</span><span class="sh-r"><a href="#portugal">Francesinha</a></span></li></ul></div>
+</div>
+</section>
+
+<section class="sect back" id="league" aria-labelledby="league-h">
+<h2 id="league-h">Cost per head</h2>
+<p class="prose lead">Cheapest first, at each dish's natural yield. The cheapest is Schweinsbraten at $2.83; the dearest is Maekju suyuk at $6.81.</p>
+<div class="tablewrap"><table class="data league"><thead><tr><th scope="col" class="n">#</th><th scope="col">Dish</th><th scope="col" class="n">Serves</th><th scope="col" class="n">Basket</th><th scope="col">Per head</th></tr></thead><tbody><tr><td class="n">1</td><td><a href="#germany">Schweinsbraten</a><span class="sm">Germany</span></td><td class="n">6</td><td class="n">$16.98</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:2.49rem"></span><span class="barv">$2.83</span></span></td></tr>
+<tr><td class="n">2</td><td><a href="#usa">Beer brats</a><span class="sm">United States</span></td><td class="n">5</td><td class="n">$15.70</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:2.77rem"></span><span class="barv">$3.14</span></span></td></tr>
+<tr><td class="n">3</td><td><a href="#peru">Arroz con pollo</a><span class="sm">Peru</span></td><td class="n">6</td><td class="n">$20.84</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:3.06rem"></span><span class="barv">$3.47</span></span></td></tr>
+<tr><td class="n">4</td><td><a href="#france">Coq à la bière</a><span class="sm">France</span></td><td class="n">4</td><td class="n">$14.65</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:3.22rem"></span><span class="barv">$3.66</span></span></td></tr>
+<tr><td class="n">5</td><td><a href="#czechia">Pivní guláš</a><span class="sm">Czechia</span></td><td class="n">6</td><td class="n">$30.16</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:4.43rem"></span><span class="barv">$5.03</span></span></td></tr>
+<tr><td class="n">6</td><td><a href="#ireland">Beef and stout stew</a><span class="sm">Ireland</span></td><td class="n">6</td><td class="n">$32.84</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:4.82rem"></span><span class="barv">$5.47</span></span></td></tr>
+<tr><td class="n">7</td><td><a href="#mexico">Discada norteña</a><span class="sm">Mexico</span></td><td class="n">6</td><td class="n">$32.93</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:4.84rem"></span><span class="barv">$5.49</span></span></td></tr>
+<tr><td class="n">8</td><td><a href="#vietnam">Tôm hấp bia sả</a><span class="sm">Vietnam</span></td><td class="n">4</td><td class="n">$22.25</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:4.90rem"></span><span class="barv">$5.56</span></span></td></tr>
+<tr><td class="n">9</td><td><a href="#england">Steak and ale pie</a><span class="sm">England</span></td><td class="n">6</td><td class="n">$35.36</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:5.19rem"></span><span class="barv">$5.89</span></span></td></tr>
+<tr><td class="n">10</td><td><a href="#belgium">Stoofvlees</a><span class="sm">Belgium</span></td><td class="n">6</td><td class="n">$39.41</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:5.79rem"></span><span class="barv">$6.57</span></span></td></tr>
+<tr><td class="n">11</td><td><a href="#portugal">Francesinha</a><span class="sm">Portugal</span></td><td class="n">4</td><td class="n">$26.65</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:5.87rem"></span><span class="barv">$6.66</span></span></td></tr>
+<tr><td class="n">12</td><td><a href="#korea">Maekju suyuk</a><span class="sm">South Korea</span></td><td class="n">4</td><td class="n">$27.25</td><td class="bar"><span class="barwrap"><span class="barfill" style="width:6.00rem"></span><span class="barv">$6.81</span></span></td></tr></tbody></table></div>
+<div class="prose" id="prices">
+<h3>How the prices work</h3>
+<p>Every figure is computed from a price table. Lines badged <span class="badge b-bls">BLS</span> use the Bureau of Labor Statistics US city average for September 2026.<sup class="cite"><a href="#src-6" aria-label="Source 6">6</a></sup> Lines badged <span class="badge b-est">EST</span> are ballpark estimates of a typical US supermarket price in October 2026. They have not been checked against a shelf and will vary by store. Each ingredient is counted at the share a recipe uses, so a tablespoon of mustard costs a sixteenth of the jar. Beer is counted at its share of a multipack. On a computer, hover over a price to see the unit price behind it. Salt, pepper and serving sides are not counted.</p>
+</div>
+</section>
+
+<section class="sect back" id="clock" aria-labelledby="clock-h">
+<h2 id="clock-h">Where the clock won</h2>
+<p class="prose lead">Every place where this book gives up something a cook in the home country would do, to save time or because a US supermarket doesn't sell it.</p>
+<ul class="clock"><li><a href="#belgium">Stoofvlees</a><span>Three hours is the dish. The only shortcut taken is frozen fries in place of fries cooked twice in beef fat.</span></li><li><a href="#czechia">Pivní guláš</a><span>Crusty bread stands in for bread dumplings, which take an hour and are not sold in US supermarkets.</span></li><li><a href="#england">Steak and ale pie</a><span>Shop-bought puff pastry for the lid; the filling can be made a day ahead.</span></li><li><a href="#ireland">Beef and stout stew</a><span>The potatoes cook in the pot, so there is no separate mash.</span></li><li><a href="#germany">Schweinsbraten</a><span>US pork shoulder has no rind, so there is no crackling. The broiler gives the top some colour.</span></li><li><a href="#france">Coq à la bière</a><span>Chicken legs in place of a rooster brings it inside an hour. The flambé with genièvre is dropped.</span></li><li><a href="#portugal">Francesinha</a><span>The sauce uses beer alone, without the port and brandy of many Porto versions.</span></li><li><a href="#usa">Beer brats</a><span>The broiler stands in for a charcoal grill.</span></li><li><a href="#mexico">Discada norteña</a><span>A Dutch oven stands in for the plough disc over a wood fire.</span></li><li><a href="#peru">Arroz con pollo</a><span>Fresh pepper and jalapeño replace ají amarillo paste by default.</span></li><li><a href="#vietnam">Tôm hấp bia sả</a><span>The Dutch oven and a lid replace a bamboo steamer.</span></li><li><a href="#korea">Maekju suyuk</a><span>The classic dips (ssamjang, saeu-jeot) are replaced by a sesame-oil and salt dip.</span></li></ul>
+</section>
+
+<section class="sect back" id="sources" aria-labelledby="sources-h">
+<h2 id="sources-h">Sources</h2>
+<ol class="sources"><li id="src-1"><a href="https://www.ars.usda.gov/ARSUserFiles/80400525/Data/retn/retn06.pdf">USDA Table of Nutrient Retention Factors, Release 6 (Dec 2007), alcohol codes 5001–5010, p.12</a></li>
+<li id="src-2"><a href="https://pubmed.ncbi.nlm.nih.gov/1556354/">Augustin J. et al., 'Alcohol retention in food preparation', J Am Diet Assoc 92:486–488 (1992)</a></li>
+<li id="src-3"><a href="https://www.niaaa.nih.gov/alcohols-effects-health/what-standard-drink">NIAAA, What is a standard drink?</a></li>
+<li id="src-4"><a href="https://www.ttb.gov/regulated-commodities/beverage-alcohol/beer/labeling/malt-beverage-alcohol-content">TTB, Malt beverage alcohol content labelling</a></li>
+<li id="src-5"><a href="https://giantfoodstores.com/groceries/beverages/soft-drinks/more-soda/goya-malta-malt-beverage-non-alcoholic-12-oz-btl.html">Giant Food Stores product page, Goya Malta non-alcoholic malt beverage</a></li>
+<li id="src-6"><a href="https://www.bls.gov/regions/mid-atlantic/data/averageretailfoodandenergyprices_usandmidwest_table.htm">US Bureau of Labor Statistics, Average retail food prices, US city average (Sept 2026)</a></li>
+<li id="src-7"><a href="https://www.bjcp.org/style/2021/1">BJCP 2021 Style Guidelines, cat. 1 (American lagers)</a></li>
+<li id="src-8"><a href="https://www.bjcp.org/style/2021/2">BJCP 2021 Style Guidelines, cat. 2 (International lagers)</a></li>
+<li id="src-9"><a href="https://www.bjcp.org/style/2021/3">BJCP 2021 Style Guidelines, cat. 3 (Czech lagers)</a></li>
+<li id="src-10"><a href="https://www.bjcp.org/style/2021/8">BJCP 2021 Style Guidelines, cat. 8 (Dark European lager)</a></li>
+<li id="src-11"><a href="https://www.bjcp.org/style/2021/13">BJCP 2021 Style Guidelines, cat. 13 (Brown British beer)</a></li>
+<li id="src-12"><a href="https://www.bjcp.org/style/2021/15">BJCP 2021 Style Guidelines, cat. 15 (Irish beer)</a></li>
+<li id="src-13"><a href="https://www.bjcp.org/style/2021/21">BJCP 2021 Style Guidelines, cat. 21 (IPA)</a></li>
+<li id="src-14"><a href="https://www.bjcp.org/style/2021/23">BJCP 2021 Style Guidelines, cat. 23 (European sour ale)</a></li>
+<li id="src-15"><a href="https://www.bjcp.org/style/2021/24">BJCP 2021 Style Guidelines, cat. 24 (Belgian ale, incl. bière de garde)</a></li>
+<li id="src-16"><a href="https://www.bjcp.org/style/2021/26">BJCP 2021 Style Guidelines, cat. 26 (Monastic ale)</a></li>
+<li id="src-17"><a href="https://ich.unesco.org/en/RL/beer-culture-in-belgium-01062">UNESCO, Beer culture in Belgium (Representative List, 2016)</a></li>
+<li id="src-18"><a href="https://en.wikipedia.org/wiki/Carbonnade">Wikipedia, Flemish stew (carbonnade / stoofvlees)</a></li>
+<li id="src-19"><a href="https://en.wikipedia.org/wiki/Goulash">Wikipedia, Goulash (Czech guláš section)</a></li>
+<li id="src-20"><a href="https://www.novinky.cz/clanek/gastro-recepty-pivo-na-taliri-recepty-na-pivni-gulas-trhanou-veprovou-plec-ale-i-vlacny-kakaovy-kolac-40591298">Novinky.cz, Pivo na talíři: pivní guláš</a></li>
+<li id="src-21"><a href="https://en.wikipedia.org/wiki/Pilsner_Urquell">Wikipedia, Pilsner Urquell</a></li>
+<li id="src-22"><a href="https://www.kirinholdings.com/en/newsroom/release/2025/1222_01.html">Kirin Holdings, Global beer consumption by country in 2024</a></li>
+<li id="src-23"><a href="https://en.wikipedia.org/wiki/Steak_pie">Wikipedia, Steak pie</a></li>
+<li id="src-24"><a href="https://en.wikipedia.org/wiki/Campaign_for_Real_Ale">Wikipedia, Campaign for Real Ale</a></li>
+<li id="src-25"><a href="https://en.wikipedia.org/wiki/Irish_stew">Wikipedia, Irish stew</a></li>
+<li id="src-26"><a href="https://whatscookingamerica.net/Soup/Guinness-BeefStew.htm">What's Cooking America, Guinness beef stew history</a></li>
+<li id="src-27"><a href="https://en.wikipedia.org/wiki/Guinness">Wikipedia, Guinness</a></li>
+<li id="src-28"><a href="https://www.munich.travel/artikel/essen-trinken/rezept-schweinsbraten">München Tourismus, Rezept Schweinsbraten</a></li>
+<li id="src-29"><a href="https://en.wikipedia.org/wiki/Dunkel">Wikipedia, Dunkel</a></li>
+<li id="src-30"><a href="https://www.france.fr/en/article/discover-cuisine-nord-pas-de-calais/">France.fr (Atout France), Discover the cuisine of Nord-Pas de Calais</a></li>
+<li id="src-31"><a href="https://www.routard.com/fr/guide/a/gastronomie-ou-manger/france/nord-pas-de-calais">Le Routard, Gastronomie Nord-Pas-de-Calais</a></li>
+<li id="src-32"><a href="https://allaboutbeer.com/article/what-is-biere-de-garde/">All About Beer, What is bière de garde?</a></li>
+<li id="src-33"><a href="https://en.wikipedia.org/wiki/Francesinha">Wikipedia, Francesinha</a></li>
+<li id="src-34"><a href="https://postal.pt/nacional/francesinha-a-historia-e-a-receita-do-melhor-petisco-do-porto/">Postal.pt, Francesinha: a história e a receita</a></li>
+<li id="src-35"><a href="https://en.wikipedia.org/wiki/Super_Bock">Wikipedia, Super Bock</a></li>
+<li id="src-36"><a href="https://en.wikipedia.org/wiki/Beer_in_Milwaukee">Wikipedia, Beer in Milwaukee</a></li>
+<li id="src-37"><a href="https://upnorthnewswi.com/community/things-you-probably-dont-know-about-wisconsin-brats">UpNorthNews, 8 things you probably don't know about Wisconsin brats</a></li>
+<li id="src-38"><a href="https://cbs58.com/news/cbs-58-hometowns-history-of-the-bratwurst-in-sheboygan">CBS 58, History of the bratwurst in Sheboygan (2025)</a></li>
+<li id="src-39"><a href="https://listserv.linguistlist.org/pipermail/ads-l/2003-June/032563.html">Barry Popik, ADS-L post on 'bratwurst' in the Sheboygan Press, 1913</a></li>
+<li id="src-40"><a href="https://repository.uaeh.edu.mx/revistas/index.php/icea/article/view/12012">UAEH Boletín ICEA, Preparación de discada norteña</a></li>
+<li id="src-41"><a href="https://laopinion.com/2020/05/27/como-hacer-una-autentica-discada-nortena/">La Opinión, Cómo hacer una auténtica discada norteña (2020)</a></li>
+<li id="src-42"><a href="https://www.posta.com.mx/coahuila/discada-nortena-un-platillo-tipico-de-coahuila-que-te-encantara-/vl2004479">Posta Coahuila, Discada norteña, un platillo típico de Coahuila</a></li>
+<li id="src-43"><a href="https://en.wikipedia.org/wiki/Beer_in_Mexico">Wikipedia, Beer in Mexico</a></li>
+<li id="src-44"><a href="https://www.elfinanciero.com.mx/monterrey/carne-asada-una-tradicion-encarecida/">El Financiero, Carne asada, una tradición encarecida (Monterrey)</a></li>
+<li id="src-45"><a href="https://larepublica.pe/recetas/834106-aprende-a-preparar-arroz-con-pollo-peruano-receta-peruana-peruvian-food">La República, Arroz con pollo peruano</a></li>
+<li id="src-46"><a href="https://www.13.cl/c/programas/diario-de-antojos/capitulos/como-hacer-arroz-con-pollo-peruano-sigue-el-paso-a-paso-de">13.cl, Cómo hacer arroz con pollo peruano</a></li>
+<li id="src-47"><a href="https://en.wikipedia.org/wiki/Chicha">Wikipedia, Chicha</a></li>
+<li id="src-48"><a href="https://libero.pe/ocio/curiosidades/2023/08/30/quien-fundo-cerveza-cusquena-fue-peruano-ocurrio-hace-100-anos-957330">Líbero, ¿Quién fundó la cerveza Cusqueña? (2023)</a></li>
+<li id="src-49"><a href="https://elcomercio.pe/blog/destilandopisco/2015/02/la-cultura-cervecera-en-el-peru/">El Comercio, La cultura cervecera en el Perú (2015)</a></li>
+<li id="src-50"><a href="https://www.dienmayxanh.com/vao-bep/tong-hop-16-mon-hap-bia-hap-dan-thom-ngon-don-gian-ai-cung-16128">Điện máy XANH, Tổng hợp 16 món hấp bia</a></li>
+<li id="src-51"><a href="https://www.dienmayxanh.com/vao-bep/cach-lam-tom-hap-bia-sa-don-gian-thom-lung-bang-xung-hap-23308">Điện máy XANH, Cách làm tôm hấp bia sả</a></li>
+<li id="src-52"><a href="https://vietcetera.com/en/cheers-through-the-ages-vietnams-beer-evolution">Vietcetera, Cheers through the ages: Vietnam's beer evolution</a></li>
+<li id="src-53"><a href="https://en.wikipedia.org/wiki/Beer_in_Vietnam">Wikipedia, Beer in Vietnam</a></li>
+<li id="src-54"><a href="https://en.wikipedia.org/wiki/Bossam">Wikipedia, Bossam</a></li>
+<li id="src-55"><a href="https://www.10000recipe.com/recipe/7026171">10000recipe, 앞다리살 맥주수육 (beer suyuk)</a></li>
+<li id="src-56"><a href="https://en.wikipedia.org/wiki/Beer_in_South_Korea">Wikipedia, Beer in South Korea</a></li>
+<li id="src-57"><a href="https://popups.uliege.be/1780-4507/index.php?id=9217">Lyumugabe F. et al., Characteristics of African traditional beers brewed with sorghum malt: a review, BASE (2012)</a></li>
+<li id="src-58"><a href="https://beerandbrewing.com/dictionary/izd8yFIQEc">Oxford Companion to Beer, African traditional beers (via Craft Beer &amp; Brewing)</a></li></ol>
+<p class="note">Prepared October 2026. History flagged as contested or folklore in the recipes could not be documented; it is reported as such and nothing has been invented to fill the gap.</p>
+</section>
+</main>
+<footer class="foot"><p>Brewed With · Twelve savoury dishes cooked with beer · October 2026</p></footer>
+
+<script>(function(){
+  var f = document.getElementById('f-family'), r = document.getElementById('f-region'),
+      t = document.getElementById('f-tier'), b = document.getElementById('f-reset'),
+      c = document.getElementById('f-count');
+  if (!f) return;
+  var rows = Array.prototype.slice.call(document.querySelectorAll('.matrix tbody tr'));
+  function apply(){
+    var n = 0;
+    rows.forEach(function(row){
+      var ok = (!f.value || row.dataset.family === f.value) &&
+               (!r.value || row.dataset.region === r.value) &&
+               (!t.value || row.dataset.tier === t.value);
+      row.hidden = !ok; if (ok) n++;
+    });
+    c.textContent = n === rows.length ? 'Showing all ' + n : (n === 0 ? 'No recipes match. Clear a filter.' : 'Showing ' + n + ' of ' + rows.length);
+  }
+  [f, r, t].forEach(function(s){ s.addEventListener('change', apply); });
+  b.addEventListener('click', function(){ f.value = ''; r.value = ''; t.value = ''; apply(); f.focus(); });
+  apply();
+})();
+</script>
+</body>
+</html>
